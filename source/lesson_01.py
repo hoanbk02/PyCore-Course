@@ -1,4 +1,6 @@
 # coding=utf-8
+__author__ = "hoanbk02@gmail.com"
+__copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
 """ Introduction
     + History and Features
