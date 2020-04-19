@@ -89,7 +89,7 @@ else:
 """ Cú pháp của if-elif-else
     if biểu_thức_điều_kiện_01:
         các câu lệnh cần chạy nếu biểu_thức_điều_kiện_01 là Đúng (True)
-    if biểu_thức_điều_kiện_02:
+    elif biểu_thức_điều_kiện_02:
         các câu lệnh cần chạy nếu biểu_thức_điều_kiện_02 là Đúng (True)
     else:
         các câu lệnh cần chạy nếu các biểu_thức_điều_kiện ở trên đềy là Sai (False)
@@ -271,7 +271,7 @@ while True:
         for val in sequence:
             ...
             if điều_kiện:
-                contunue
+                continue
             ...
         ...
 
