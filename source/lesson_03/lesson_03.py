@@ -40,7 +40,7 @@ s = "123 456,789!abc"
 print(len(s))  # 3 chữ cái, 9 chữ số, 1 dấy phẩy, 1 dấu chấm than và 1 dấu cách
 
 
-""" Accssing Strings. Truy cập vào các ký tự trong Chuỗi.
+""" Accessing Strings. Truy cập vào các ký tự trong Chuỗi.
     - Chúng ta có thể truy cập từng ký tự bằng chỉ số (index) hoặc một đoạn ký tự bằng cắt (slicing).
     - Index các ký tự trong chuỗi được đánh số từ trái qua phải và bắt đầu từ 0:
       ký tự đầu tiên là 0, ký tự thứ 2 là 1, ..., ký tự cuối cùng là (độ dài - 1)
@@ -104,7 +104,7 @@ print(s[2:-1:3])
 
 """  Kỹ thuật cắt chuỗi - Slicing - Nâng cao - Cắt với bước nhảy âm
     => Giống cơ chế làm việc của hàm range(i,j,a) với a là số âm
-    - Cú pháp s[i:j: -a] trả lại chuỗi gồm các ký tự có chỉ số cách đều nhau một đoạn a, bắt đầu từ j lùi dần về trước i
+    - Cú pháp s[i:j: -a] trả lại chuỗi gồm các ký tự có chỉ số cách đều nhau một đoạn a, bắt đầu từ i lùi dần về trước j
 """
 s = 'Python Core'
 print(s[8:2:-2])
@@ -227,10 +227,10 @@ print(s.count('l'))
 """ Tìm kiếm và thay thế trong chuỗi
     Tên hàm	            Ý nghĩa
     s.find(sub)	        Trả ra chỉ số (vị trí) đầu tiên bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
-    s.rfind(sub)	        Trả ra chỉ số cuối cùng bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
-    s.startswith(sub)	    Trả ra True nếu chuỗi s bắt đầu bằng chuỗi sub
+    s.rfind(sub)	    Trả ra chỉ số cuối cùng bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
+    s.startswith(sub)	Trả ra True nếu chuỗi s bắt đầu bằng chuỗi sub
     s.endswith(sub)	    Trả ra False nếu chuỗi s kết thúc bằng chuỗi sub
-    s.replace(s1, s2)	    Trả ra chuỗi mới bằng cách thay thế tất cả các chuỗi s1 trong s thành s2
+    s.replace(s1, s2)	Trả ra chuỗi mới bằng cách thay thế tất cả các chuỗi s1 trong s thành s2
 """
 s = 'python is amazing'
 print(s.find('on'))
@@ -256,3 +256,14 @@ print(f"Diện tích hình chữ nhật {a}x{b} = {a*b:.3}")
 from datetime import datetime
 today = datetime.today()
 print(f"Today: {today:%B %d, %Y}")
+
+
+""" Bài tập về nhà:
+Bài 01: Viết chương trình thay thế tất cả các ký tự giống ký tự đầu tiên của một Chuỗi thành $.
+Bài 02: Viết chương trình để xóa bỏ ký tự thứ m trong chuỗi không rỗng, với m là số không âm, nhập từ bàn phím.
+Bài 03: Viết chương trình để xóa bỏ các ký tự có chỉ số là số lẻ trong một chuỗi.
+Bài 04: Viết chương trình sinh ra một chuỗi từ 2 ký tự đầu và 2 ký tự cuối trong chuỗi được nhập vào, 
+        nếu độ dài chuỗi nhỏ hơn 2 thì in ra chuỗi rỗng.
+Bài 05: Viết chương trình tìm ra ký tự lớn nhất và ký tự nhỏ nhất của một chuỗi nhập từ bán phím.
+Bài 06: Viết chương trình đảo ngược từ ký tự thường sang ký tự hoa và từ ký tự hoa sang ký tự thường trong một chuỗi.
+"""
