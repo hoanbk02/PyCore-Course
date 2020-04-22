@@ -61,7 +61,7 @@ if s_05:
         elif c < c_min:
             c_min = c
     print(f"Ký tự lớn nhất {c_max} và nhỏ nhất {c_min}")
-print('Bài 05 - DONE!')
+print('Bài 05 - DONE!')  # Bài này có thể dùng hàm max()/min()
 
 
 # Bài 06: Viết chương trình đảo ngược từ ký tự thường sang ký tự hoa và từ ký tự hoa sang ký tự thường trong một chuỗi.
