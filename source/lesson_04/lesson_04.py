@@ -11,7 +11,7 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 """
 
 """ Introduction
-    - Python cung cấp cho chúng ta một loạt các kiểu dữ liệu hỗn hợp kiểu là một chuỗi liên tiếp gì đó.
+    - Python cung cấp cho chúng ta một loạt các kiểu dữ liệu hỗn hợp, dạng là một chuỗi liên tiếp gì đó.
     - Trong đó, kiểu dữ liệu List - rất linh hoạt và được dùng thường xuyên nhất.
 """
 
@@ -36,7 +36,7 @@ print(my_list[5])
 # print(my_list[10])  # Lỗi IndexError: list index out of range
 
 # Trong trường hợp trên là có list lồng nhau
-print(my_list[5][2])  # Truy cập đến list con bằng [5], sau đó truy cập vào phần tử của list con bằng [3]
+print(my_list[5][2])  # Truy cập đến list con bằng [5], sau đó truy cập vào phần tử của list con bằng [2]
 print(my_list[0][1])  # Truy cập vào phần tử đầu tiên của my_list => được 1 chuỗi, rồi truy cập vào phần tử thứ 2 của chuỗi
 
 print(my_list[-2])  # Truy cập phần tử thứ 2 từ cuối lên
@@ -101,7 +101,7 @@ print(my_list)  # Lỗi: NameError: name 'my_list' is not defined
 my_list = [0, 1, 2, 3, 8, 5, 6, 7, 8, 9]
 my_list.remove(8)  # Xóa đi phần tử đầu tiên từ trái sang phải = phần tử muốn xóa
 print(my_list)
-my_list.remove(1992) # Lỗi: ValueError: list.remove(x): x not in list
+my_list.remove(1992)  # Lỗi: ValueError: list.remove(x): x not in list
 print(my_list.pop(3))  # Xóa đi và trả lại phần tử tại chỉ số 3
 print(my_list)
 print(my_list.pop())  # Xóa đi và trả lại phần tử tại vị trí cuối cùng
