@@ -110,7 +110,6 @@ print(set_01 - set_02)
 print(set_01.difference(set_02))
 print(set_02 - set_01)
 
-
 print(set_01 ^ set_02)
 print(set_02.symmetric_difference(set_01))
 
@@ -128,7 +127,7 @@ print(set_02.symmetric_difference(set_01))
     - set.issubset(other_set): Trả lại True nếu set là con của other_set
     - set.issuperset(other_set): Trả lại True nếu set có chứa other_set
     - set.pop(): Xóa và trả lại một phần tử ngẫu nhiên trong set. Trả lại KeyError nếu như set rỗng
-    - set.remove(elemet): Xóa element khỏi set, nếu element không tồn tại sẽ báo lỗi KeyError
+    - set.remove(element): Xóa element khỏi set, nếu element không tồn tại sẽ báo lỗi KeyError
     - set.symmetric_difference(*other_set): Trả lại phần bù đối xứng của 2 hoặc nhiều set
     - set.symmetric_difference_update(other_set): Cập nhật lại set bằng các giá trị phần bù đối xứng giữa nó và other_set
     - set.union(*other_set): Trả lại hợp giữa 2 hoặc nhiều set
