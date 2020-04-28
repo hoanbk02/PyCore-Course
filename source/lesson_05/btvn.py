@@ -26,5 +26,5 @@ Bài 09: Viết chương trình tính tổng và tìm giá trị lớn nhất tr
 Bài 10: Cho list sau: ["www.hust.edu.vn", "www.wikipedia.org", "www.asp.net", "www.amazon.com"]
     Viết chương trình để in ra hậu tố (vn, org, net, com) trong các tên miền website trong list trên.
 
-Bài 11. Viết chương trình tìm từ dài nhất trong một câu nhập vào từ bàn phím.
+Bài 11: Viết chương trình tìm từ dài nhất trong một câu nhập vào từ bàn phím.
 """

@@ -4,9 +4,9 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
 """ Tuple:
     - Introduction
-    - Accessing list
+    - Accessing Tuple
     - Operations
-    - Working with tuple
+    - Working with Tuple
     - Functions and Methods
 """
 """ ==>> Tuple cũng khá giống với List.
