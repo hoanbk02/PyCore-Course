@@ -168,7 +168,7 @@ for lg in languages:
     print(f"I can use {lg}")
 
 
-# List Comprehension: Tạo một list mới từ list cũ một cách trong sáng
+# List Comprehension: Tạo một list mới từ list cũ một cách bao quát
 # Ví dụ: Sinh một list chứa 5 số đầu của dãy số với công thức tổng quát: Un = 5n^2/(n+1)
 s_number = [5*i**2/(i+1) for i in range(6)]
 print(s_number)
