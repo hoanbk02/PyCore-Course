@@ -148,7 +148,7 @@ print(sorted(my_dict.keys()))
 # Cách bình thường tạo như sau:
 new_dict = {}
 for i in range(10):
-    new_dict[i]: (i+1)**2
+    new_dict[i] = (i+1)**2
 # => Cách Comprehension
 new_dict = {i: (i+1)**2 for i in range(10)}
 print(new_dict)
