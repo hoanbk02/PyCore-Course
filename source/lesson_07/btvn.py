@@ -8,7 +8,7 @@ Bài 02: Viết chương trình sắp xếp các phần tử của dict theo chi
 
 Bài 03: Viết chương trình lấy các các giá trị không trùng lặp từ dict
 
-Bài 04: Viết chương trình tìm ra 3 giá trị lớn nhất trong dict
+Bài 04: Viết chương trình tìm ra 3 phần tử có key lớn nhất trong dict
 
 Bài 05: Viết chương trình tạo ra dict với lớn hơn 3 phần tử, value của mỗi phần tử là một list có lớn hơn 5 phần tử.
         Truy cập và in ra phần tử thứ 5 trong phần value của mỗi phần tử trong dict
