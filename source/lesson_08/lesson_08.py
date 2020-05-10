@@ -190,7 +190,6 @@ func_greet('Python', msg='Bạn thế nào?')  # Dùng 1 vị trí và dùng 1 t
 """ - Cách 3: Số lượng tham số tùy ý
     Python cho phép định nghĩa hàm với số lượng tham số bất kì.
     Khi đó, trong hàm dùng thêm dấu hoa thị (*) trước tham số để biểu thị cho nhiều tham số.
-
 """
 
 
