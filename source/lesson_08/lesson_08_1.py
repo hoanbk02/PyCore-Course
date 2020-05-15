@@ -53,7 +53,7 @@ f6 = open('file_test_open.txt', mode='r', encoding='utf-8')
 """
 
 f7 = open('file_test_open.txt', encoding='utf-8')
-# Làm gì đó với file f6 ở trên
+# Làm gì đó với file f7 ở trên
 f7.close()
 
 """ Nếu khi làm gì đó với file mà có lỗi thì sẽ ko thể đóng được file
@@ -103,7 +103,7 @@ print(f.tell())  # Lấy vị trí hiện tại của con trỏ đọc file
 f.seek(0)  # Cho con trỏ về lại đầu file
 print(f.read())
 
-""" Làm thế nào để đọc từng dòng trong file => dùng vòng lặp for, hoặc readline() hoặc readlines()"""
+""" Làm thế nào để đọc từng dòng trong file => dùng vòng lặp for, hoặc readline() hoặc readlines() """
 
 for line in f:
     print(line, end='')

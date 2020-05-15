@@ -1,4 +1,4 @@
-""" BÀI TẬP VỀ NHÀ BUỔI 07 - Function:
+""" BÀI TẬP VỀ NHÀ BUỔI 08 - Function:
 
 Bài 01: Viết hàm
         def max_min(*numbers)

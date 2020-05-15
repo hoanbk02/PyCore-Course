@@ -1,4 +1,4 @@
-""" BÀI TẬP VỀ NHÀ BUỔI 07 - DICTIONARY:
+""" BÀI TẬP VỀ NHÀ BUỔI 06 - DICTIONARY:
 
 Bài 00: Viết chương trình tính tích các phần tử trong một dict
 
