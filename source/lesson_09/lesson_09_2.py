@@ -23,7 +23,7 @@ class DaGiac:
         thuộc tính sides - lưu độ dài các cạnh
         phương thức input_sides - yêu cầu người dùng nhập độ dài các cạnh
         phương thức display - hiển thị độ dài các cạnh
-        phương thức perimeter - tính và hiện thị chu vi
+        phương thức perimeter - tính và hiển thị chu vi
     """
     def __init__(self, no_sides):
         self.n = no_sides
