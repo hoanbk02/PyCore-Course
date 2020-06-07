@@ -111,12 +111,14 @@ print(s[8:2:-2])
 print(s[::-1])
 print(s[-2::-3])
 
+
 """ Change or Delete Chuỗi
     - Trong Python, chuỗi sau khi được tạo ra thì không thể thay đổi được (Strings are immutable).
 """
 s = 'python'
 s[1] = 'i'  # Lỗi: TypeError: 'str' object does not support item assignment
 del s[0]  # Lỗi: TypeError: 'str' object doesn't support item deletion
+
 
 """ Mã - Code của ký tự
     + Trong máy tính, mọi dữ liệu đều được lưu thành số - chính xác là dạng số nhị phân
@@ -146,6 +148,7 @@ print(ord('5'))
 
 print(chr(97))
 print(chr(ord('a') - 32))
+
 
 """ So sánh ký tự
     - Do mỗi ký tự tưng ứng với mã của nó, nên ta có thể so sánh 2 ký tự với nhau.
@@ -201,6 +204,7 @@ s = input("Nhập một chuỗi: ")
 for i in range(len(s)):
     if s[i] == 'a':
         print(i, end=" ")
+
 
 """ Các hàm phổ biến với chuỗi. Để gọi hàm trên chuỗi s ta dùng cú pháp s.tên_hàm(tham_số_nếu_cần)
     Tên hàm         Ý nghĩa
