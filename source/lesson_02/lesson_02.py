@@ -190,7 +190,7 @@ print("Tổng các số nhơ hon {} mà chia hết cho 3 la: {}".format(n, sum_t
 
 """ Nested for - Các lệnh for lồng nhau hay for trong for """
 
-# Ví dụ: In ra màn hình hình một hình chữ nhật toán các ký tự @ kích thước n, m
+# Ví dụ: In ra màn hình hình một hình chữ nhật toán các ký tự * kích thước n, m
 n, m = int(input()), int(input())
 for i in range(n):
     for j in range(m):
@@ -295,8 +295,8 @@ Bài 1. Lập chương trình thực hiện công việc sau:
     Giải nghiệm phương trình bậc 2: ax^2 + bx + c = 0  (Kể cả trường hợp a=0)
     
 Bài 2. Lập chương trình tính các tổng sau:
-    S_1 = 1 + x + x^2 + x^3 + ... + x^n 
-    S_2 = 1 - x + x^2 - x^3 + ... + (-1)^n.x^n 
+    S_1 = 1 + x + x^2 + x^3 + ... + x^n
+    S_2 = 1 - x + x^2 - x^3 + ... + (-1)^n.x^n
     S_3 = 1 + \dfrac{x}{1!} + \dfrac{x}{2!} + ... + \dfrac{x^n}{n!}
     Trong đó, n là số nguyên dương và x là một số thực bất kì. Cả 2 đều được nhập từ bàn phím
     

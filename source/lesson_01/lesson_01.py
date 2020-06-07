@@ -173,9 +173,9 @@ print("Hello {f_name}. I am {my_name}.".format(f_name='John', my_name='PyCore'))
 """
 
 # Người dùng nhập vào bán kình đường tròn, tính diện tích in ra màn hình
-radis = float(input())
-area = 3.14 * radis ** 2
-print("Hình tròn bán kình {} thì diện tích là {}".format(radis, area))
+radius = float(input())
+area = 3.14 * radius ** 2
+print("Hình tròn bán kính {} thì diện tích là {}".format(radius, area))
 
 # Cần làm tròn số ta có thể dùng hàm round(value, số_chữ_số_sau_dấu_phẩy)
 n, m = 0.123, 0.456
