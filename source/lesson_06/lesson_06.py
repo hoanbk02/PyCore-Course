@@ -51,7 +51,7 @@ print(a_dict)
 
 
 """ Truy cập vào dict
-    - Các kiểu dữ liệu trước đâu, nếu có thể thì dùng chỉ số để truy cập
+    - Các kiểu dữ liệu trước đây, nếu có thể thì dùng chỉ số để truy cập
     - Còn dict thì dùng key để truy cập
     - Có thể dùng toán tử [] hoặc hàm get()
     - get() sẽ trả lại None nếu như key ko tồn tại, còn [] sẽ trả lại lỗi: KeyError

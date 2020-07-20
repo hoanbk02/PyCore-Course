@@ -26,7 +26,7 @@ Bài 08: Viết chương trình lấy ra top 3 phần tử có giá trị lớn 
 Bài 09: Viết hàm đếm số lần xuất hiện các ký tự trong một String
 Ví dụ:
     Input: ‘Stringings’
-    Output: {‘S’: 1, ‘t’: 1, ‘r’: 1, ’i’: 2,  ‘n’: 2, ‘g’: 2, ‘s’: 1}
+    Output: {‘S’: 1, ‘t’: 1, ‘r’: 1, ’i’: 2, ‘n’: 2, ‘g’: 2, ‘s’: 1}
 
 Bài 10: Viết hàm đếm số lần xuất hiện các từ đơn trong một đoạn văn bản
 

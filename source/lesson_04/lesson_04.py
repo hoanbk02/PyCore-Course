@@ -97,7 +97,7 @@ del my_list  # Xóa cả list đi
 print(my_list)  # Lỗi: NameError: name 'my_list' is not defined
 
 # Ngoài ra còn có thể dùng remove(phần_tử_muốn_xóa) hoặc pop(vị_trí_phần_tử_muốn_xóa)
-# hoặc clear() để xóa hết các phần tử, tạo ra mảng rỗng
+# hoặc clear() để xóa hết các phần tử, tạo ra List rỗng
 my_list = [0, 1, 2, 3, 8, 5, 6, 7, 8, 9]
 my_list.remove(8)  # Xóa đi phần tử đầu tiên từ trái sang phải = phần tử muốn xóa
 print(my_list)
