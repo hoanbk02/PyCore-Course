@@ -20,8 +20,8 @@ voice_vn_sg = 'vietnam_sgn'
 engine_tts.setProperty('voice', voice_vn_sg)
 engine_tts.setProperty('rate', 120)
 
-# engine_tts.say(txt)
-engine_tts.save_to_file(txt, 'offline.mp3')
+engine_tts.say(txt)
+# engine_tts.save_to_file(txt, 'offline.mp3')
 
 # Lấy các voices khả dụng ra để thực hiện tổng hợp
 # voices = engine_tts.getProperty('voices')
