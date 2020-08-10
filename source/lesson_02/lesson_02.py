@@ -79,7 +79,7 @@ print(n)
         các câu lệnh cần chạy nếu biểu_thức_điều_kiện là Sai (False)
 """
 
-# Chương trinh kiểm tra số nhập vào là dương hay không dương
+# Chương trình kiểm tra số nhập vào là dương hay không dương
 n = float(input())
 if n > 0:
     print('n = {} là số dương!'.format(n))
