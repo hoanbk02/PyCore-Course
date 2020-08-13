@@ -186,7 +186,7 @@ n = int(input())
 sum_three = 0
 for i in range(0, n, 3):
     sum_three += i
-print("Tổng các số nhơ hon {} mà chia hết cho 3 la: {}".format(n, sum_three))
+print("Tổng các số nhỏ hơn {} mà chia hết cho 3 là: {}".format(n, sum_three))
 
 """ Nested for - Các lệnh for lồng nhau hay for trong for """
 
@@ -257,7 +257,7 @@ Trong nhiều trường hợp, cần dừng vòng lặp hiện tại hoặc dừ
             ...
         ...
 """
-# Viết chương trình kiểm tra số người dùng nhập vào là số dương thì dừng lại
+# Viết chương trình kiểm tra số mà người dùng nhập vào là số dương thì dừng lại
 
 while True:
     print("Nhập 1 số nguyên:", end=" ")
@@ -305,7 +305,7 @@ Bài 3. Lập chương trình thực hiện các công việc sau:
     Tính tổng các chữ số của số đó.
     Hiển thị kết qủa ra màn hình
     
-Bài 3. Lập trình thực hiện các công việc sau:
+Bài 4. Lập trình thực hiện các công việc sau:
     Nhập 3 số a, b, c bất kì
     Hãy kiểm tra xem ba số đó có phải là độ dài của các cạnh của một tam giác hay không? 
     Nếu đúng là tam giác thì xác định là tam giác vuông hay không?
