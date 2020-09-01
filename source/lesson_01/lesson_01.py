@@ -173,7 +173,7 @@ print("Hello {f_name}. I am {my_name}.".format(f_name='John', my_name='PyCore'))
 """
 
 # Người dùng nhập vào bán kình đường tròn, tính diện tích in ra màn hình
-radius = float(input())
+radius = float(input("Nhập bán kính = "))
 area = 3.14 * radius ** 2
 print("Hình tròn bán kính {} thì diện tích là {}".format(radius, area))
 
@@ -189,7 +189,7 @@ print(round(n + m, 2))  # số_chữ_số_sau_dấu_phẩy có thể âm, thử 
 """
 import math
 
-radis = float(input())
+radis = float(input("Nhập bán kính = "))
 area = math.pi * radis ** 2
 print("Hình tròn bán kình {} thì diện tích là {}".format(radis, round(area, 3)))
 
