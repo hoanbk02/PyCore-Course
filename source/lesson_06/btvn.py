@@ -28,7 +28,7 @@ Ví dụ:
     Input: ‘Stringings’
     Output: {‘S’: 1, ‘t’: 1, ‘r’: 1, ’i’: 2, ‘n’: 2, ‘g’: 2, ‘s’: 1}
 
-Bài 10: Viết hàm đếm số lần xuất hiện các từ đơn trong một đoạn văn bản
+Bài 10: Viết chương trình đếm số lần xuất hiện các từ đơn trong một đoạn văn bản
 
 Bài 11: Viết chương trình để sinh ra dict mới từ list các dict có dạng như trong ví dụ:
 Ví dụ:
