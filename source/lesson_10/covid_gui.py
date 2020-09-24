@@ -19,22 +19,24 @@ class CovidGUI:
 
     def __init__(self, covid):
         self.covid = covid
-        window = tk.Tk()
+
+        window = tk.Tk()  # Khởi tạo window Tk
         window.title("Số liệu ca lây nhiễm Covid")
         window.geometry("800x250")
         window.resizable(0, 0)
-        window.rowconfigure(0, minsize=50, weight=1)
+        window.rowconfigure(0, minsize=50, weight=1)  # Cấu hình cho row và column
         window.rowconfigure(1, minsize=200, weight=1)
         window.columnconfigure(0, minsize=600, weight=1)
 
         font_01 = ("Courier", 13, "bold")
         font_02 = ("Courier", 12, "bold")
 
-        frm_top = tk.Frame(window)
+        frm_top = tk.Frame(window)  # Khởi tạo Frame, trong window được phân tách thành nhiều Frame khác nhau để quản lý
         frm_top.grid(column=0, row=0)
         combo_country = ttk.Combobox(frm_top, values=list(self.list_countries.values()), font=font_01)
         combo_country.grid(column=0, row=0, padx=10, pady=10)
         combo_country.current(0)
+        # bind() để bắt và xử lý sự kiện thay đổi giá trị của Combobox
         combo_country.bind("<<ComboboxSelected>>", self.change_combo_selected)
 
         frm_bot = tk.Frame(window)
