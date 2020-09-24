@@ -24,15 +24,15 @@ print('%25s' % 'Total deaths:', '%10s' % covid.get_total_deaths())
 list_countries = {
         0: 'Stop',
         1: 'Australia',
-        4: 'China',
-        11: 'Italy',
-        14: 'Russia',
-        17: 'United Kingdom',
-        18: 'US',
-        25: 'Japan',
-        27: 'India',
-        108: 'Laos',
-        183: 'Vietnam',
+        2: 'China',
+        3: 'Italy',
+        4: 'Russia',
+        5: 'United Kingdom',
+        6: 'US',
+        7: 'Japan',
+        8: 'India',
+        9: 'Laos',
+        10: 'Vietnam',
     }
 while True:
     print('\n_____ ***** _____ _____ ***** _____ _____ ***** _____')
@@ -54,7 +54,7 @@ while True:
     if id_country == 0:
         break
     else:
-        country_data = covid.get_status_by_country_id(id_country)
+        country_data = covid.get_status_by_country_name(list_countries[id_country].lower())
         country = country_data['country']
         confirmed = country_data['confirmed']
         active = country_data['active']
