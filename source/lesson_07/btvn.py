@@ -53,5 +53,20 @@ Bài 11: Cho dãy số Tribonacci với công thức truy hồi sau:
 Bài 12: Viết hàm
         def find_x(a_list, x)
     trả lại tất cả các vị trí mà x xuất hiện trong a_list, nếu không có thì trả lại -1
+
+Bài 13. Thực hiện code lại hàm sau và cho biết ý nghĩa của nó
+
+def enter_data():
+    while True:
+        n = input("Nhập 1 số nguyên: ")
+        if n.isnumeric():
+            n = int(n)
+            if n > 0:
+                print("Đã nhập số dương")
+                return n
+            print("Đã nhập số không dương. Chương trình sẽ tiếp tục!")
+        else:
+            print("Dữ liệu đã nhập không phải số nguyên")
+
 """
 
