@@ -33,3 +33,52 @@ Example:
     Input: A = [1, 2, 1, 3, 2, 7, 4, 2, 5, 5]
     => Output: 6 (vì chuỗi hình thành được là: [1, 2, 3, 7, 4, 5]
 """
+
+# Bài 08:
+A = [9, 8, 7, 6, 5, 4, 3]
+count = 0
+for j in range(1, len(A)):
+    for i in range(j):
+        if A[i] > A[j]:
+            count += 1
+print(count)
+
+# Bài 09:
+mx_1 = [[1, 2, 3],
+        [4, 5, 6],
+        [1, 0, 0]]
+mx_2 = [[2, 1, 0],
+        [9, 0, 5],
+        [0, 3, 7]]
+
+result = []
+row = len(mx_1)
+col = len(mx_1[0])
+
+for i in range(row):
+    row_result = []
+    for j in range(col):
+        cell = 0
+        for k in range(3):
+            cell += mx_1[i][k] * mx_2[k][j]
+        row_result.append(cell)
+    result.append(row_result)
+
+print(result)
+
+# Bài 10:
+A = [1, 2, 1, 3, 2, 7, 4, 2, 5, 5]
+
+# Cách 1:
+result_1 = []
+count_1 = 0
+for item in A:
+    if item not in result_1:
+        count_1 += 1
+        result_1.append(item)
+print(count)
+
+
+# Cách 2:
+result_2 = set(A)
+count_2 = len(result_2)
