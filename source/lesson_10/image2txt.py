@@ -12,7 +12,7 @@ import pytesseract
 from PIL import Image
 
 
-path_image = '/home/hoanpp/Downloads/FireShot/i2t.png'
+path_image = '/home/hoanpp/Downloads/FireShot/i2t2.png'
 image = Image.open(path_image)
 txt = pytesseract.image_to_string(image)
 print("Văn bản có trong ảnh:")
