@@ -62,7 +62,7 @@ print(year_born)
 """ 
 Quy tắc đặt tên biến:
     - Chỉ gồm chữ cái (a-z, A-Z) hoặc chữ số (0-9) hoặc gạch dưới (_)
-    - Không dược bắt đầu bằng chữ số
+    - Không bắt đầu bằng chữ số
     - Không được trùng với từ khóa của ngôn ngữ (bảng từ khóa)
     - Độ dài tùy ý
 Ví dụ:
