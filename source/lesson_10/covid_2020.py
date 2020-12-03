@@ -25,7 +25,7 @@ print('%25s' % 'Total deaths:', '%10s' % covid.get_total_deaths())
 # Tính đến thời điểm chạy chương trình của một quốc gia cụ thể
 list_countries = {
         0: 'Stop',
-        1: 'Australia',
+        1: 'Afghanistan',
         37: 'China',
         11: 'Italy',
         14: 'Russia',
@@ -34,7 +34,7 @@ list_countries = {
         25: 'Japan',
         27: 'India',
         108: 'Laos',
-        183: 'Vietnam',
+        183: 'Uzbekistan',
     }
 while True:
     print('\n_____ ***** _____ _____ ***** _____ _____ ***** _____')
