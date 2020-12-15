@@ -13,7 +13,7 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
 """ Môi trường làm việc với Python
     + Offline: Python3.6, PyCharm
-    + Online: repl.it, ...   
+    + Online: repl.it, ...
 """
 
 # Chương trình đầu tiên: In ra dòng chữ 'Hi! I am Python.'
@@ -67,7 +67,7 @@ Quy tắc đặt tên biến:
     - Độ dài tùy ý
 Ví dụ:
     - Hợp lệ: myClass, var_1, query_set, _products, ...
-    - Không hợp lệ: 1_connection, global, class, text!, bien-1...
+    - Không hợp lệ: 1_connection, global, class, text!, bien-1, ...
 Lưu ý: 
     - Python là ngôn ngữ có phân biệt hoa và thường.
     - Đặt tên biến sao cho có tính gợi nhớ
