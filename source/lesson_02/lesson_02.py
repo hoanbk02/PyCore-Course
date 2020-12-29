@@ -288,25 +288,3 @@ for i in range(10, 100):
     if i % 2 == 0 or i % 3 == 0 or i % 5 == 0:
         continue
     print(i, end=" ")
-
-""" Bài tập về nhà:
-Bài 1. Lập chương trình thực hiện công việc sau:
-    Nhập ba số a, b, c bất kì từ bàn phím
-    Giải nghiệm phương trình bậc 2: ax^2 + bx + c = 0  (Kể cả trường hợp a=0)
-    
-Bài 2. Lập chương trình tính các tổng sau:
-    S_1 = 1 + x + x^2 + x^3 + ... + x^n
-    S_2 = 1 - x + x^2 - x^3 + ... + (-1)^n.x^n
-    S_3 = 1 + \dfrac{x}{1!} + \dfrac{x}{2!} + ... + \dfrac{x^n}{n!}
-    Trong đó, n là số nguyên dương và x là một số thực bất kì. Cả 2 đều được nhập từ bàn phím
-    
-Bài 3. Lập chương trình thực hiện các công việc sau:
-    Nhập 1 số nguyên dương n bất kì (n<1000). Yêu cầu kiểm tra dữ liệu đầu vào, nếu sai yêu cầu nhập lại.
-    Tính tổng các chữ số của số đó.
-    Hiển thị kết qủa ra màn hình
-    
-Bài 4. Lập trình thực hiện các công việc sau:
-    Nhập 3 số a, b, c bất kì
-    Hãy kiểm tra xem ba số đó có phải là độ dài của các cạnh của một tam giác hay không? 
-    Nếu đúng là tam giác thì xác định là tam giác vuông hay không?
-"""
