@@ -1,0 +1,5 @@
+my first file
+This file
+contains three lines
+How to remove a trailing newline in Python
+A trailing newline
