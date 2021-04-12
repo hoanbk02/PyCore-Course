@@ -1,5 +1,0 @@
-string with the trailing newline removed
-Kite is a plugin for
-Dong moi day nhe
-day la dong moi
-1234546sdgnsjdgsdggfh 
