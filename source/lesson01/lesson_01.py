@@ -13,7 +13,8 @@ Quản lý phiên bản: git, github
 """
 
 """ Dùng ở đâu?
-- Lập trình web. Có nhiều framework phổ biến như: Django, Flask, Plone, Pyramic, .... Các trang web như: Mozilla, Instagram, ...
+- Lập trình web. Có nhiều framework phổ biến như: Django, Flask, Plone, Pyramic, .... 
+Các trang web như: Mozilla, Instagram, ...
 - Khoa học và Tính toán. Có rất nhiều thư viện cho việc này: NumPy, SciPy, EarthPy (trái đất), AstroPy (thiên văn)
 - Khai phá dữ liệu và AI, ML, DL
 - Ứng dụng Desktop
@@ -37,7 +38,7 @@ print("Hi! I am Python.")  # Bấm chuột phải vào đây và chọn Run đ�
 
 
 name = 'Phạm Hoàn'
-print('Chào mừng %s đến với thế giới Python ;)' % name)  # Muốn chào mừng ai thì chỉ cần thay tên vào dòng bên trên
+print('Chào mừng %s đến với thế giới Python' % name)  # Muốn chào mừng ai thì chỉ cần thay tên vào dòng bên trên
 
 a = 1
 b = 2
