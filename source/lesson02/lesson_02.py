@@ -20,7 +20,7 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 # Đoạn chương trình khai báo biến lưu trữ tên
 # Và sau đó in ra lời chào mừng với tên đó
 name = 'Phạm Hoàn'  # Một biến với tên name để lưu trữ tên của ai đó, phục vụ cho câu lệnh dưới
-print('Chào mừng %s đến với thế giới Python ;)' % name)  # Câu lệnh in ra lời chào với biến name khai báo bên trên
+print('Chào mừng %s đến với thế giới Python.' % name)  # Câu lệnh in ra lời chào với biến name khai báo bên trên
 
 """
 - Câu lệnh output => in gì đó ra màn hình console => print
@@ -30,7 +30,7 @@ print('Chào mừng %s đến với thế giới Python ;)' % name)  # Câu lệ
     + Luôn nhận vào thành 1 chuỗi. Cần thì ép kiểu như phần trước - học sau
 """
 name = input("Nhập tên ai đó: ")
-print("Xin chào bạn %s nhé ;)" % name)
+print("Xin chào bạn %s nhé." % name)
 
 # Nhập đoạn chương trình sau và chạy chương trình để xem kết quả hiện ra
 print(4000 + 1000 - 3000)
@@ -96,6 +96,19 @@ str = 'a string'
 print(str)
 cars = [1, 2, 4, 6, 3]
 print(cars)
+
+# var = 1990  # => int
+# print(var)
+# var = 10.25  # => float
+# print(var)
+# var = 1+3j  # => complex
+# print(var)
+# b = True  # => bool
+# print(b)
+# _str = 'a string'  # => string
+# print(_str)
+# cars = [1, 2, 3, 5, 7, 0]  # => list
+# print(cars)
 
 """ - Kiểu dữ liệu boolean chỉ có 2 giá trị: True - Đúng, False - Sai """
 
