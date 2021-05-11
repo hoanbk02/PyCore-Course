@@ -176,6 +176,15 @@ while i <= n:
     i += 1  # tăng biến đếm lên 1
 print("Tổng các số tự nhiên đến {} là: {}".format(n, sum_n))
 
+# Nhập vào một số tự nhiên x, tìm số n lớn nhất mà tổng các số tự nhiên đến n không vượt quá x
+x = int(input("Nhập x = "))
+n = 0
+sum_n = 0
+while sum_n <= x:
+    sum_n = sum_n + i
+    n += 1
+print(f"Số n lớn nhất là {n-1}")
+
 """ Lập chương trình thực hiện các công việc sau:
     + Nhập số epsilon < 1  từ bàn phím
     + Tính e = 1+\dfrac{1}{1!} + \dfrac{1}{2!} + ... +\dfrac{1}{n!} quá trình dừng khi \dfrac{1}{n!} <  epsilon.

@@ -7,7 +7,7 @@ Bài 1. Lập chương trình thực hiện công việc sau:
 Bài 2. Lập chương trình tính các tổng sau:
     S_1 = 1 + x + x^2 + x^3 + ... + x^n
     S_2 = 1 - x + x^2 - x^3 + ... + (-1)^n.x^n
-    S_3 = 1 + \dfrac{x}{1!} + \dfrac{x^2}{2!} + ... + \dfrac{x^n}{n!}
+    S_3 = 1 + x/1! + x^2/2! + ... + x^n/n!
     Trong đó, n là số nguyên dương và x là một số thực bất kì. Cả 2 đều được nhập từ bàn phím
 
 Bài 3. Lập chương trình thực hiện các công việc sau:
@@ -21,7 +21,7 @@ Bài 4. Lập trình thực hiện các công việc sau:
     Nếu đúng là tam giác thì xác định là tam giác vuông hay không?
 
 Bài 5. Lập chương trình thực hiện các công việc sau:
-    1. Nhập số epsilon < 1 từ bàn phím
-    2. Tính e = 1 + 1/1! + 1/2! + ... + 1/n! quá trình dừng khi 1/n! < epsilon.
-    3. Đưa kết quả ra màn hình
+    Nhập số epsilon < 1 từ bàn phím
+    Tính e = 1 + 1/1! + 1/2! + ... + 1/n! quá trình dừng khi 1/n! < epsilon.
+    Đưa kết quả ra màn hình
 """
