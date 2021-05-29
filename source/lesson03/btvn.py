@@ -13,3 +13,17 @@ Bài 2. Code đoạn chương trình để giải quyết các yêu cầu sau:
 Bài 3. Xây dựng đoạn chương trình mô phỏng lại các phép toán học (càng nhiều càng tốt),
 tối thiểu cần có: cộng, trừ, nhân, chia
 """
+
+# Bài 1.
+r = float(input("Nhập bán kinh hình tròn: "))
+s = 3.14 * r**2
+print(f'Dien tich hình tron la: {s}')
+
+# Bài 2.
+import math
+
+x = float(input("Nhập x: "))
+y = float(input("Nhập y: "))
+z = float(input("Nhập z: "))
+F = (x + y + z)/(x**2 + y**2 + 1) - abs(x - z * math.cos(y))
+print(f"Gia tri cua F = {F}")
