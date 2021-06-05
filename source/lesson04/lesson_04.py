@@ -140,7 +140,7 @@ n = int(input("Nhập n = "))
 factorial = 1
 for i in range(1, n + 1):
     factorial *= i
-print("{}! = {}".format(n, factorial))
+print(f"{n}! = {factorial}")
 
 # Ví dụ: Nhập vào số tự nhiên n, tính tổng các số chia hết cho 3 mà nhỏ hơn n
 n = int(input("Nhập n = "))
@@ -174,7 +174,7 @@ sum_n = 0
 while i <= n:
     sum_n = sum_n + i
     i += 1  # tăng biến đếm lên 1
-print("Tổng các số tự nhiên đến {} là: {}".format(n, sum_n))
+print(f"Tổng các số tự nhiên đến {n} là: {sum_n}")
 
 # Nhập vào một số tự nhiên x, tìm số n lớn nhất mà tổng các số tự nhiên đến n không vượt quá x
 x = int(input("Nhập x = "))
