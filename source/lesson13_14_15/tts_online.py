@@ -1,5 +1,4 @@
-"""
-Bước Chuẩn bị. Đối với TTS online, một trong những service phổ biến là dùng Google Text to Speech
+""" Bước chuẩn bị. Đối với TTS online, một trong những service phổ biến là dùng Google Text to Speech
     - Cài module Google Text to Speech: pip install gTTS
     => Module tổng hợp tiếng nói từ văn bản
     - Cài module playsound: pip install playsound
