@@ -51,6 +51,7 @@ else:
         sqrt_delta = math.sqrt(delta)
         print(f"Phương trình có 2 nghiệm: x_1 = {(-b + sqrt_delta)/(2*a)}, x_2 = {(-b - sqrt_delta)/(2*a)}")
 
+
 # Bài 2
 x = float(input("Nhập x: "))
 n = int(input("Nhập n:"))
@@ -75,6 +76,7 @@ for i in range(n+1):
     S3 += x ** i / math.factorial(i)
 print(f"Giá trị S3 = {S3}")
 
+
 # Bài 3.
 while True:
     n = int(input("Nhập giá trị n dương (< 1000): "))
@@ -87,6 +89,7 @@ while n > 0:
     tong += n % 10
     n //= 10
 print(f"Tổng các chữ số của {n} là {tong}")
+
 
 # Bài 4.
 a = float(input("Nhập cạnh a: "))
@@ -103,6 +106,7 @@ if (a + b > c) and (b + c > a) and (a + c > b):
         print("Tam giác vuông")
 else:
     print("Không phải độ dài 3 cạnh của tam giác.")
+
 
 # Bài 5.
 epsilon = float(input("Nhập epsilon = "))
