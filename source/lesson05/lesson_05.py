@@ -194,17 +194,23 @@ print(s >= "")
 Để làm việc với từng ký tự trong chuỗi, ta có thể dùng vòng lặp for để duyệt theo chỉ số hoặc duyệt trực tiếp từng ký tự
 """
 # Ví dụ: Đếm xem trong chuỗi vừa nhập từ bàn phím có bao nhiêu ký tự chữ số
-s = input("Nhập chuỗi s: ")
-# Cách 1: Duyệt dựa trên chỉ số  => Dùng khi cần quan tâm đến chỉ số
+# Cách 1: Dùng chỉ số => Dùng khi cần quan tâm đến chỉ số
+s = input("Chuỗi s: ")
 count = 0
 for i in range(len(s)):
     if '0' <= s[i] <= '9':
         count += 1
+
+print(f"Số lượng ký tự số trong '{s}': {count}")
+
 # Cách 2: Duyệt trực tiếp
-for ky_tu in s:
-    if '0' <= ky_tu <= '9':
+s = input("Chuỗi s: ")
+count = 0
+for item in s:
+    if '0' <= item <= '9':
         count += 1
-print("Có %s ký tự số" % count)
+
+print(f"Số lượng ký tự số trong '{s}': {count}")
 
 # Ví dụ: In ra các ký tự số trong chuỗi được nhập từ bàn phím
 s = input("Nhập một chuỗi: ")
