@@ -447,3 +447,19 @@ Yêu cầu: Lập trình để giải quyết công việc sau
     - Tìm và in ra các số nguyên tố nhỏ hơn N
 """
 
+
+# -> code function nhập dữ liệu, chứa kiểm tra dữ liệu đầu vào
+# -> code function check? is prime?
+# -> duyệt các số < N, rồi kiểm tra xem có phải số nguyên tố ko?
+
+
+def input():  # nhập giá trị
+    pass
+
+
+def is_prime(n):  # kiểm tra n có phải số nguyên tố hay ko
+    pass
+
+
+def find_all_prime(N):  # tìm và in ra tất cả các số nguyên tố < N
+    pass
