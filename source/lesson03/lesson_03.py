@@ -178,9 +178,7 @@ print("Hình tròn bán kình {} thì diện tích là {}".format(radis, round(a
 """ Một số hàm và hằng số trong module math
     - Hằng số: math.pi, math.e
     - Căn bậc 2: math.sqrt(x)
-    - Làm tròn xuống: math.floor(x)
-    - Làm tròn lên: math.ceil(x)
-    - Bỏ phần thập phân: math.trunc(x)
+    - Làm tròn xuống: math.floor(x); Làm tròn lên: math.ceil(x); Bỏ phần thập phân: math.trunc(x)
     - Giai thừa: math.factorial(n)
     - Ước chung lớn nhất: math.gcd(a, b)
     - Lượng giác: math.sin(x), math.cos(x), math.tan(x), math.asin(x), .... 
