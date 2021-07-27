@@ -1,15 +1,22 @@
 """ BÀI TẬP VỀ NHÀ
 
-Bài 1. Code đoạn chương trình cho phép:
-    1. Nhập vào bán kình r của hình tròn
-    2. Tính diện tích hình tròn đó
-    3. In kết quả ra màn hình "Dien tich hình tron la: <giá trị>"
+Bài 01. Ngân hàng Vietcombank sẽ cho khách hàng vay tiền nếu họ trên 18 tuổi và khoản thu nhập hằng năm tối thiểu 2500$.
+Với biến chỉ tuổi của khách là age, biến chỉ thu nhập là income, hãy viết biểu thức logic để kiểm tra một khách hàng có được vay vốn hay không?
 
-Bài 2. Code đoạn chương trình để giải quyết các yêu cầu sau:
+Bài 02. Code đoạn chương trình để giải quyết các yêu cầu sau:
     1. Nhập 3 số thực x, y, z bất kì.
     2. Tính giá trị biểu thức F: F = (x+y+z)/(x^2+y^2+1) - |x-z*cos(y)|
     3. Đưa giá trị tính được của F ra màn hình dưới dạng: Gia tri cua F = <gia tri>
 
-Bài 3. Xây dựng đoạn chương trình mô phỏng lại các phép toán học (càng nhiều càng tốt),
+Bài 03. Xây dựng đoạn chương trình mô phỏng lại các phép toán học (càng nhiều càng tốt),
 tối thiểu cần có: cộng, trừ, nhân, chia
+
+Bài 04. Hãy viết đoạn chương trình thực hiện các việc sau:
+    1. Nhập hai số nguyên a và b từ bàn phím
+    2. Thực hiện phép chia lấy nguyên (//) và chia lấy dư (%) của a cho b
+    3. In kết quả 2 phép chia ra màn hình
+    Lưu ý: Khi nhập giá trị để test, cần thực hiện các trường hợp sau và xem kết quả thu được
+    - TH1: a > 0, b < 0
+    - TH2: a < 0, b > 0
+    - TH3: a < 0, b < 0
 """
