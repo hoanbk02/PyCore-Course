@@ -12,6 +12,7 @@ Bài 2. Code đoạn chương trình để giải quyết các yêu cầu sau:
 
 Bài 3. Xây dựng đoạn chương trình mô phỏng lại các phép toán học (càng nhiều càng tốt),
 tối thiểu cần có: cộng, trừ, nhân, chia
+
 """
 
 # Bài 1.
