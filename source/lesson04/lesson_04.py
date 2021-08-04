@@ -181,8 +181,8 @@ x = int(input("Nhập x = "))
 n = 0
 sum_n = 0
 while sum_n <= x:
-    sum_n = sum_n + i
     n += 1
+    sum_n = sum_n + n
 print(f"Số n lớn nhất là {n-1}")
 
 """ Lập chương trình thực hiện các công việc sau:
