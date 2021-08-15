@@ -4,7 +4,7 @@ Bài 00. Viết chương trình tính tích value của các phần tử trong m
 
 Bài 01. Viết chương trình tìm giá trị lớn nhất và giá trị nhỏ nhất trong các value của dict
 
-Bài 02. Viết chương trình lấy các các giá trị không trùng lặp từ dict
+Bài 02. Viết chương trình lấy các value không trùng lặp từ dict
 
 Bài 03. Viết chương trình tìm ra 3 phần tử của dict có key lớn nhất
 

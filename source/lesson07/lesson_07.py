@@ -73,6 +73,8 @@ print(your_list)
 my_list = [0, 2, 6, 7]
 my_list.insert(2, 4)
 print(my_list)
+my_list.insert(-1, 9)
+print(my_list)
 my_list[3:3] = [5, -5, -6, -7]  # thử cả với my_list[-3:-3] = [5, -5, -6, -7]
 print(my_list)
 
