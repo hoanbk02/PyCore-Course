@@ -12,7 +12,7 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 """
 
 """ Dictionary là gì?
-    - Là tập hợp các phần tử không có thứ tự
+    - Là tập hợp các phần tử
     - Mỗi phần tử có dạng cặp key: value
     - Khi biết key có thể truy xuất ra value
 """
@@ -153,7 +153,7 @@ print(my_dict)
     - not in: kiểm tra xem key đó ko có trong dict
     - for và in để duyệt dict
 """
-my_dict = {1: 1, 2: 2, 3: 3}
+my_dict = {1: -1, 2: -2, 3: -3}
 print(1 in my_dict)
 print(9 not in my_dict)
 
