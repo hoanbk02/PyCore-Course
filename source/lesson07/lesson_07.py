@@ -137,14 +137,6 @@ print(my_list)
 my_list.sort()
 print(my_list)  # sort() ko trả kết quả mà thay đổi ngay trong list gốc
 
-your_list = ["abc", "1234", []]
-your_list.sort(key=len)
-print(your_list)
-
-ran_list = ["abc", "1234", []]
-ran_list.sort(key=len, reverse=True)
-print(ran_list)
-
 """ Kiểm tra tồn tại:
     - in: kiểm tra xem có trong list không
     - not in: kiểm tra xem không có trong list
@@ -182,4 +174,32 @@ random = [8, 1, 2, 5, 6, 0, 7, 9]
 new_list = [x for x in random if x % 2 == 0]
 print(new_list)
 
+"""Quay lại chút với lambda function và sort, sorted, filter, map"""
 
+your_list = ["abc", "1234", []]
+your_list.sort(key=len)
+print(your_list)
+
+ran_list = ["abc", "1234", []]
+ran_list.sort(key=len, reverse=True)
+print(ran_list)
+
+"""Với filter()
+    - Nhận tham số là một function và 1 list
+    - Tham số function sẽ được gọi với tất cả các phần tử của list và một list mới được trả ra chứa các phần tử
+    mà tham số function xác định là True
+"""
+my_list = [1, 2, 5, 8, 9, 6, 7, 0]
+# Lấy các phần tử là số chẵn trong list trên
+so_chan_list = list(filter(lambda x: x % 2 == 0, my_list))
+print(so_chan_list)
+
+""" Với map()
+    - Nhận tham số là một function và 1 list
+    - Tham số function sẽ được gọi với tất cả các phần tử trong list và một list mới được trả ra chứa các phần tử
+    mà được trả lại từ tham số function
+"""
+my_list = [1, 2, 5, 8, 9, 6, 7, 0]
+# Tính bình phương các giá trị trong list
+square_list = list(map(lambda x: x * x, my_list))
+print(square_list)

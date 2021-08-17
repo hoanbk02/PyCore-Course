@@ -255,7 +255,7 @@ def square(x):
 """ Khi nào dùng Lambda function:
     - Khi cần 1 hàm không tên và trong 1 thời gian ngắn
     - Thường dùng làm tham số cho các hàm cấp cao hơn (hàm lấy hàm khác làm tham số đầu vào)
-    - Dùng nhiều trong các hàm built-in như filter(), map(), ...
+    - Dùng nhiều trong các hàm built-in như filter(), map(), sort, sorted, ...
 """
 """ Ví dụ dùng với filter()
     - Nhận tham số là một function và 1 list
