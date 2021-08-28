@@ -158,11 +158,17 @@ print(1 in my_dict)
 print(9 not in my_dict)
 
 
-for i in my_dict:  # duyệt như này sẽ là duyệt key
-    print(f"Key: {i}, value: {my_dict[i]}")
+print('Cách 1')
+for k in my_dict:  # duyệt theo key
+    print(f'Key: {k}, value: {my_dict[k]}')
 
+print('Cách 1')
 for key in my_dict.keys():
-    print(f"Key: {key}, value: {my_dict[key]}")
+    print(f'Key: {key}, value: {my_dict[key]}')
+
+print('Cách 3')
+for k, v in my_dict.items():
+    print(f'Key: {k}, value: {v}')
 
 
 """ Dictionary Comprehension: Tạo dict một cách bao quát
