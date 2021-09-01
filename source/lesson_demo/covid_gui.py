@@ -60,25 +60,25 @@ class CovidGUI:
         lb_total.grid(column=0, row=1, sticky='e')
         et_total = tk.Entry(frm_bot_world, width=20, justify='right', font=font_02)
         et_total.grid(column=1, row=1)
-        et_total.insert(0, f'{self.covid.get_total_confirmed_cases():,}')
+        et_total.insert(0, f'{self.covid.get_total_confirmed_cases()}')
 
         lb_recover = tk.Label(frm_bot_world, text="Phục hồi:")
         lb_recover.grid(column=0, row=2, sticky='e')
         et_recover = tk.Entry(frm_bot_world, width=20, justify='right', font=font_02)
         et_recover.grid(column=1, row=2)
-        et_recover.insert(5, f'{self.covid.get_total_recovered():,}')
+        et_recover.insert(5, f'{self.covid.get_total_recovered()}')
 
         lb_active = tk.Label(frm_bot_world, text="Đang điều trị:")
         lb_active.grid(column=0, row=3, sticky='e')
         et_active = tk.Entry(frm_bot_world, width=20, justify='right', font=font_02)
         et_active.grid(column=1, row=3)
-        et_active.insert(5, f'{self.covid.get_total_active_cases():,}')
+        et_active.insert(5, f'{self.covid.get_total_active_cases()}')
 
         lb_death = tk.Label(frm_bot_world, text="Tử vong:")
         lb_death.grid(column=0, row=4, sticky='e')
         et_death = tk.Entry(frm_bot_world, width=20, justify='right', font=font_02, foreground='red')
         et_death.grid(column=1, row=4)
-        et_death.insert(5, f'{self.covid.get_total_deaths():,}')
+        et_death.insert(5, f'{self.covid.get_total_deaths()}')
 
         self.lb_country = tk.Label(frm_bot_country, text="Chưa chọn quốc gia!", foreground="blue", font=font_01)
         self.lb_country.config(width=19)
@@ -118,10 +118,10 @@ class CovidGUI:
             country_name = combo.get()
             self.lb_country['text'] = country_name
             country_data = self.covid.get_status_by_country_name(country_name.lower())
-            self.et_total_c.insert(0, f"{country_data['confirmed']:,}")
-            self.et_recover_c.insert(0, f"{country_data['recovered']:,}")
-            self.et_active_c.insert(0, f"{country_data['active']:,}")
-            self.et_death_c.insert(0, f"{country_data['deaths']:,}")
+            self.et_total_c.insert(0, f"{country_data['confirmed']}")
+            self.et_recover_c.insert(0, f"{country_data['recovered']}")
+            self.et_active_c.insert(0, f"{country_data['active']}")
+            self.et_death_c.insert(0, f"{country_data['deaths']}")
 
 
 if __name__ == "__main__":
