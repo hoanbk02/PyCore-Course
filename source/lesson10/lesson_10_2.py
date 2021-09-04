@@ -154,7 +154,7 @@ class Laptop:
     def sell(self):
         print(f'Giá bán là {self.__price}')
 
-    def set_price(self, price):
+    def set_price(self, price):  # setter
         self.__price = price
 
 
