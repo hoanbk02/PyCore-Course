@@ -89,7 +89,7 @@ print(my_dict)
 
 """ Xóa phần tử:
     - Có thể xóa một phần tử cụ thể bằng cách dùng pop(key), xóa khỏi dict phần tử có key và trả lại value của phần tử đó
-    - popitem() dùng để xóa và trả về cặp (key, value) cuối cùng từ dict
+    - popitem() dùng để xóa và trả về cặp (key, value) ở vị trí cuối cùng của dict
     - clear() dùng để xóa toàn bộ các phần tử, biến thành dict rỗng
     - Toán tử del để xóa phần tử cụ thể nào đó
 """
