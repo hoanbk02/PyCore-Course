@@ -89,7 +89,7 @@ print(my_dict)
 
 """ Xóa phần tử:
     - Có thể xóa một phần tử cụ thể bằng cách dùng pop(key), xóa khỏi dict phần tử có key và trả lại value của phần tử đó
-    - popitem() dùng để xóa và trả về cặp (key, value) bất kỳ từ dict
+    - popitem() dùng để xóa và trả về cặp (key, value) cuối cùng từ dict
     - clear() dùng để xóa toàn bộ các phần tử, biến thành dict rỗng
     - Toán tử del để xóa phần tử cụ thể nào đó
 """
@@ -114,11 +114,11 @@ del my_dict
     - copy(): Tạo bản sao cho dict
     - fromkeys(seq[, v]): Trả lại dict mới với các key từ seq và giá trị từ v, nếu không có thì mặc định = None
     - get(key[,d]): Trả lại value của key, nếu key ko tồn tại thì trả lại d, nếu ko có d thì trả lại None
+    - pop(key[,d]): Xóa và trả lại value của phần tử có key, nếu không tồn tại key thì trả lại d, nếu ko có d thì báo lỗi KeyError
+    - popitem(): Trả lại phần tử bất kì dạng (key, value), nếu dict rỗng thì báo lỗi KeyError
     - items(): Trả lại thể hiện của dict dạng (key, value)
     - keys(): Trả lại List các key của dict
     - values(): Trả lại list các giá trị của các phần tử trong dict
-    - pop(key[,d]): Xóa và trả lại value của phần tử có key, nếu không tồn tại key thì trả lại d, nếu ko có d thì báo lỗi KeyError
-    - popitem(): Trả lại phần tử bất kì dạng (key, value), nếu dict rỗng thì báo lỗi KeyError
     - setdefault(key[,d]): Nếu key tồn tại, trả lại value, nếu ko thêm key với value=d và trả lại d, nếu ko có d thì là None
     - update([other]): Cập nhật dict với các cặp key-value trong other, nếu key tồn tại thì sẽ ghi đè
 """
@@ -162,7 +162,7 @@ print('Cách 1')
 for k in my_dict:  # duyệt theo key
     print(f'Key: {k}, value: {my_dict[k]}')
 
-print('Cách 1')
+print('Cách 2')
 for key in my_dict.keys():
     print(f'Key: {key}, value: {my_dict[key]}')
 
