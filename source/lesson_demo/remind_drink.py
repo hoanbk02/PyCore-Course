@@ -33,7 +33,7 @@ def log():
 def start_time(interval):
     while True:
         gen_notify(
-            '\N{alarm clock} Uống nước đeeeeeeeeê!',
+            '\N{alarm clock} Uống nước đeeeeeeeê!',
             '\U0001F595 \U0001F449 Đã đến lúc uống nước \U0001F964 rồi đó mày ơi!\n\U0001F60E Không đừng trách tao \U0001F5E1')
         log()
         time.sleep(interval)
