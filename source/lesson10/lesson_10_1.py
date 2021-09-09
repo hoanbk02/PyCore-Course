@@ -13,7 +13,7 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
     Mỗi object được gọi là instance (thể hiện) cho class, việc tạo ra object này còn được gọi là instantiation - khởi tạo
 """
 
-""" Định nghĩa class:
+""" Khai báo class:
     - Bắt đầu bằng từ khóa class, sau đó là tên của nó
     - Đoạn string đầu tiên được gọi là docstring - mô tả về class. Dù nó là ko bắt buộc, nhưng nên viết nó
     => như Ví dụ 1
