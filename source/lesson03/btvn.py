@@ -17,3 +17,17 @@ Bài 03. Hãy viết đoạn chương trình thực hiện các việc sau:
     - TH2: a < 0, b > 0
     - TH3: a < 0, b < 0
 """
+
+# Bài 01.
+age = int(input('Age = '))
+income = int(input('Income = '))
+print(age > 18 and income >= 2500)
+
+# Bài 2.
+import math
+
+x = float(input("Nhập x: "))
+y = float(input("Nhập y: "))
+z = float(input("Nhập z: "))
+F = (x + y + z)/(x**2 + y**2 + 1) - abs(x - z * math.cos(y))
+print(f"Gia tri cua F = {F}")
