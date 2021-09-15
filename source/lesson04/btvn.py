@@ -8,7 +8,7 @@ Bài 02. Lập chương trình tính các tổng sau:
     S_1 = 1 + x + x^2 + x^3 + ... + x^n
     S_2 = 1 - x + x^2 - x^3 + ... + (-1)^n.x^n
     S_3 = 1 + x/1! + x^2/2! + ... + x^n/n!
-    Trong đó, n là số nguyên dương và x là một số thực bất kì. Cả 2 đều được nhập từ bàn phím
+Trong đó, n là số nguyên dương và x là một số thực bất kì. Cả 2 đều được nhập từ bàn phím
 
 Bài 03. Lập chương trình thực hiện các công việc sau:
     1. Nhập 1 số nguyên dương n bất kì (n<1000). Yêu cầu kiểm tra dữ liệu đầu vào, nếu sai yêu cầu nhập lại.
@@ -24,4 +24,13 @@ Bài 05. Lập chương trình thực hiện các công việc sau:
     1. Nhập số epsilon < 1 từ bàn phím
     2. Tính e = 1 + 1/1! + 1/2! + ... + 1/n! quá trình dừng khi 1/n! < epsilon.
     3. Đưa kết quả ra màn hình
+
+Bài 06. Lập chương trình thực hiện các công việc sau:
+    1. Nhập vào điểm Toán của một học sinh (là số thực từ 0 đến 10)
+    2. In ra học lực trong môn Toán của học sinh đó
+        - Loại Giỏi nếu điểm từ 8.0 trở lên
+        - Loại Khá nếu điểm tù 6.5 trở lên
+        - Loại Trung bình nếu điểm tù 5.0 trở lên
+        - Loại Yếu nếu điểm tù 3.5 trở lên
+        - Còn lại là loại Kém
 """
