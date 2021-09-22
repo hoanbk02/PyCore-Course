@@ -60,6 +60,10 @@ for c in s_06:
 print("Chuỗi mới: " + s_new)
 print('Bài 04 - DONE!')
 
+# Cách 2: Dùng hàm swapcase()
+s_new_new = s_06.swapcase()
+print(s_new_new)
+
 
 # Bài 05. Viết chương trình in ra các ký tự số trong chuỗi được nhập từ bàn phím
 s = input("Nhập một chuỗi: ")
