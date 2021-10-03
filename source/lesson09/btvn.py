@@ -13,9 +13,9 @@ Bài 03. Viết hàm
     để kiểm tra xem số tự nhiên n có phải là số hoàn hảo hay ko, trả lại True nếu có, False nếu không.
     Ghi chú: Xem định nghĩa về số hoàn hảo: http://hanoimoi.com.vn/Tin-tuc/Thieu-nhi/592454/so-hoan-hao-la-gi
 
-Bài 04. Viết hàm
-        def is_prime(n)
-    để kiểm tra xem số tự nhiên n có phải số nguyên tố hay không, nếu có thì trả lại True, nếu không thì trả lại False
+Bài 04. Dùng hàm is_prime(n) đã có trong bài học để xây dựng đoạn chương trình:
+    1. Nhập vào số nguyên dương n từ bàn phím
+    2. Tìm và in ra số nguyên tố bé nhất và lớn hơn n
 
 Bài 05. Viết hàm
         def count_upper_lower(str)
