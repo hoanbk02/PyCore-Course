@@ -24,4 +24,16 @@ Bài 05. Lập chương trình thực hiện các công việc sau:
     1. Nhập số epsilon < 1 từ bàn phím
     2. Tính e = 1 + 1/1! + 1/2! + ... + 1/n! quá trình dừng khi 1/n! < epsilon.
     3. Đưa kết quả ra màn hình
+
+Bài 06. Người dùng nhập vào số n - số hàng để in mô hình kim tự tháp số dạng dọc như ví dụ sau
+- Nếu nhập n = 5 thì in ra:
+1
+12
+123
+1234
+12345
+1234
+123
+12
+1
 """
