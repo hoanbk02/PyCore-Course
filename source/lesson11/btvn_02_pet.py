@@ -6,7 +6,7 @@ class Dog:
         self.age = age
 
     def description(self):
-        return f'{self.name} is {self.age} years old'
+        return f'{self.name} is {self.age}.'
 
     def speak(self, sound):
         return f'{self.name} says {sound}'
