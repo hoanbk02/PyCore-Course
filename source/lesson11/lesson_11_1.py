@@ -14,8 +14,8 @@ __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
         - kêu, chạy, nhảy, ăn, uống => Hành vi
     - Khái niệm OOP trong Python còn tập trung vào việc viết code có thể tái sử dụng, được biết đến như là DRY - Dont Repeat Yourself
     - Trong Python, OOP theo một số nguyên tắc cơ bản như sau:
-        - Inheritance - Kế thừa: Sử dụng các chi tiết từ một class mới mà ko làm thay đổi gì class đã có
-        - Encapsulation - Đóng gói: Ẩn các chi tiết riêng tư của một class đối với các object khác
+        - Inheritance - Kế thừa: Sử dụng lại các chi tiết từ một class cũ mà không làm thay đổi gì class đó
+        - Encapsulation - Đóng gói: Ẩn các chi tiết riêng của một class mà không muốn class khác thao tác đến
         - Polymorphism - Đa hình: Sử dụng các thao tác chung theo nhiều cách khác nhau tương ứng với các đầu vào khác nhau
 """
 
