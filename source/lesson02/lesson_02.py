@@ -2,168 +2,193 @@
 __author__ = "hoanbk02@gmail.com"
 __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
-
-""" Chú thích trong Python
-    Câu lệnh Output/Input
-    Biến (Variable). Định danh, quy ước đặt tên
-    Các kiểu dữ liệu:
-        + Kiểu dữ liệu dựng sẵn: bool, sequences, sets, characters, literals
-        + Kiểu dữ liệu người dùng định nghĩa
-        + Hằng số
-        + Xác định kiểu dữ liệu của biến
+"""
+Sử dụng Python làm máy tính
+    + Toán tử toán học
+    + Toán tử gán
+    + Toán tử so sánh
+    + Toán tử boolean
+    + Toán tử logical
+    + Toán tử membership
+    + Toán tử identity
+    + Độ ưu tiên của toán tử
+    + Các hàm toán học
 """
 
-""" Các cách viết comment
-    + Comment 1 dòng dùng #
-    + Comment nhiều dòng thì dùng # tại mỗi đầu dòng; hoặc dùng cặp 3 nháy đơn hoặc dùng cặp 3 nháy kép
-"""
-# Đoạn chương trình khai báo biến lưu trữ tên
-# Và sau đó in ra lời chào mừng với tên đó
-name = 'Phạm Hoàn'  # Một biến với tên name để lưu trữ tên của ai đó, phục vụ cho câu lệnh dưới
-print('Chào mừng %s đến với thế giới Python.' % name)  # Câu lệnh in ra lời chào với biến name khai báo bên trên
-
-"""
-- Câu lệnh output => in gì đó ra màn hình console => print
-- Câu lệnh input => nhận gì đó được nhập vào từ bàn phím => input
-    + Gặp lệnh này, chương trình sẽ chờ người dùng nhập vào gì đó và bấm phím Enter
-    + Lưu lại giá trị nhập này có thể dùng biến
-    + Luôn nhận vào thành 1 chuỗi. Cần thì ép kiểu như phần trước - học sau
-"""
-name = input("Nhập tên ai đó: ")
-print("Xin chào bạn %s nhé." % name)
 
 # Nhập đoạn chương trình sau và chạy chương trình để xem kết quả hiện ra
 print(4000 + 1000 - 3000)
 print(12 * 3 / 4)
 
-
-""" 
-- Biến - Variable: Một cái tên/nhãn dùng để gọi một giá trị nào đó
-- Dùng biến giúp chương trình mạch lạc, dễ hiểu
-- Để gán giá trị vào biến ta dùng dấu bằng(=). Ví dụ: year_born = 1980, name = 'Py'
+""" Các toán tử toán học:
+    Phép toán      Ý nghĩa          Ví dụ
+        +           Cộng            2 + 3 = 5
+        -           Trừ             1 - 10 = -9
+        *           Nhân            5 * 8 = 40
+        /           Chia            21 / 5 = 4.2
+        //      Chia lấy nguyên     21 // 5 = 4
+        %       Chia lấy dư         21 % 5 = 1
+        **          Lũy thừa        2 ** 3 = 8 (2^3)
 """
 
-# Nhập đoạn chương trình sau và chạy để kiểm tra kết quả
-name = 'Python'
-print(name + ' was born in')
-year_born = 1980
-print(year_born)
+# Nhập đoạn chương trình sau và rồi chạy để kiểm tra kết quả
+print(2 + 3)
+print(1 - 10)
+print(5 * 8)
+print(21 / 5)
+print(21 // 5)
+print(21 % 5)
+print(2 ** 3)
 
 
-""" 
-Quy tắc đặt tên biến:
-    - Chỉ gồm chữ cái (a-z, A-Z) hoặc chữ số (0-9) hoặc gạch dưới (_)
-    - Không bắt đầu bằng chữ số
-    - Không được trùng với từ khóa của ngôn ngữ (bảng từ khóa)
-    - Độ dài tùy ý
-Ví dụ:
-    - Hợp lệ: myClass, var_1, query_set, _products, ...
-    - Không hợp lệ: 1_connection, global, class, text!, bien-1, ...
-Lưu ý: 
-    - Python là ngôn ngữ có phân biệt hoa và thường.
-    - Đặt tên biến sao cho có tính gợi nhớ
-    - Tên biến gồm nhiều từ thì cách nhau bằng gạch dưới
-"""
+""" Toán tử gán """
+# Khai báo biến và gán giá trị phải thực hiện cùng lúc
+x = 1
+y = 2
+print(x + y)
 
-# Sử dụng biến để làm bài sau: Tính trung bình cộng của 3 số đó
-a = 1
-b = 2
-c = 3
+# Thực hiện gán các giá trị cho nhiều biến đồng thời
+a, b, c = 1, 2, 3
 tb = (a + b + c) / 3
 print(tb)
 
+# Gán cùng 1 giá trị cho nhiều biến
+i = j = k = 0
+print(i)
+print(j)
+print(k)
 
-""" Các kiểu dữ liệu dựng sẵn:
-    + bool
-    + Number: int, float, complex
-    + characters, string
-    + sequence, set, ...
+# Gán có tính update
+a = 10  # giá trị gán lúc đầu
+a = 2 * a + 6  # giá trị a sẽ được cập nhật mới = giá trị a cũ nhân 2 rồi cộng 6
+print(a)
+# Để cập nhật giá trị cho biến thì cần có gán giá trị ban đầu
+
+""" Các cú pháp tắt cho việc cập nhật giá trị
+        Cú pháp ngắn        Cú pháp đầy đủ
+        n += 1              n = n + 1
+        n -= 2              n = n - 2
+        n *= 3              n = n * 3
+        n /= x              n = n / x
+        n **= 4             n = n ** 4
+        a %= b              a = a % b
+"""
+# Tự viết chương trình check lại các cú pháp trên
+
+""" Các Toán tử so sánh:
+    Phép toán           Ý nghĩa
+        ==              So sánh bằng. True nếu 2 bên bằng nhau
+        !=              So sánh khác (không bằng). True nếu 2 bên khác nhau
+        >               So sánh lớn hơn. True nếu bên trái lớn hơn bên phải
+        >=              So sánh lớn hơn hoặc bằng. True nếu bên trái lớn hơn hoặc bằng bên phải
+        <               So sánh nhỏ hơn. True nếu bên trái nhỏ hơn bên phải
+        <=              So sánh nhỏ hơn hoặc bằng. True nếu bên trái nhỏ hơn hoặc bằng bên phải
 """
 
-""" Kiểu dữ liệu người dùng định nghĩa """
+x = 3000
+y = 5000
+print('x == y is', x == y)
+print('x != y is', x != y)
+print('x > y is', x > y)
+print('x < y is', x < y)
+print('x >= y is', x >= y)
+print('x <= y is', x <= y)
 
-# Nhập chương trình sau và chạy để xem kết quả.
-var = 1992
-print(var)
-var = 10.26
-print(var)
-var = 2 + 1j
-print(var)
 
-b = True
-print(b)
-str = 'a string'
-print(str)
-cars = [1, 2, 4, 6, 3]
-print(cars)
-
-# var = 1990  # => int
-# print(var)
-# var = 10.25  # => float
-# print(var)
-# var = 1+3j  # => complex
-# print(var)
-# b = True  # => bool
-# print(b)
-# _str = 'a string'  # => string
-# print(_str)
-# cars = [1, 2, 3, 5, 7, 0]  # => list
-# print(cars)
-
-""" - Kiểu dữ liệu boolean chỉ có 2 giá trị: True - Đúng, False - Sai """
-
-"""
-- Xâu/Chuỗi ký tự là đoạn chữ, trong đó, mỗi thành phần nhỏ gọi là ký tự. 
-- Thường đặt trong cặp dấu nháy kép hoặc dấu nháy đơn.
-- Để khai báo chuỗi có nhiều dòng thì đặt đoạn chữ trong cặp 3 dấu nháy kép hoặc 3 dấu nháy đơn
+""" 
+- Các Toán tử logical:
+    Phép toán           Ý nghĩa
+    not x               Phủ định của x. True nếu x False và ngược lại
+    x and y             Kiểm tra điều kiện đồng thời. True nếu cả x và y đều True, nếu không thì False
+    x or y              Kiểm tra có 1 trong 2 điều kiện đúng. False nếu cả x và y đều False, nếu không thì True
+    
+- Bảng giá trị chân lý cho các phép toán:
+    x           y           not x           x and y         x or y
+    True        True        False           True            True
+    True        False       False           False           True
+    False       True        True            False           True
+    False       False       True            False           False
 """
 
-msg = '''Hồn tôi là một vườn hoa lá
-Rất đậm hương và rộn tiếng chim...
-- Trích Từ ấy của Tố Hữu - 
-'''
-print(msg)
+# Nhập chương trình sau và chạy thử để kiểm tra kết quả
+a = True
+b = False
+print(a + 9)
+print(b + 9)
+print('not a is:', not a)
+print('not b is:', not b)
+print('a or b is:', a or b)
+print('a and b is:', a and b)
 
 
-""" Hằng số - Là biến mà không thể thay đổi giá trị sau khi đã khai báo.
-Nhưng trong Python không có định nghĩa để khái báo về hằng số nhưng chúng ta có thể quy định với nhau,
-khi tên biến được đặt tất cả bằng chữ in hoa thì nó ám chỉ 1 hằng số"""
-
-PI = 3.1414
-GRAVITY = 9.8
-E = 2.718281828  # Hằng số Nê-pe (Napier)
-print(PI)
-print(GRAVITY)
-print(E)
-
-
-""" Xác định kiểu dữ liệu của biến. Kiểu dữ liệu của biến phụ thuộc vào giá trị mà nó đang lưu trữ
-    + type(var): Cho biết kiểu dữ liệu của biến
-    + isinstance(var, type): Trả lại đúng nếu var mang kiểu type và sai nếu không mang
+""" Toán tử membership: 
+    - in: True nếu giá trị hoặc biến có trong chuỗi
+    - not in: True nếu giá trị hoặc biến không có trong chuỗi
 """
 
-# Nhập chương trình sau và chạy để xem kết quả.
-var = 1992
-print(var, 'is of type', type(var))
-var = 10.26
-print(var, 'is of type', type(var))
-var = 2 + 1j
-print(var, 'is complex number?', isinstance(var, complex))
-var = [1, 2, 3, 0, 6]
-print(var, 'is of type', type(var))
+x = 'Halo Python '
+
+print('H' in x)
+print('hello' not in x)
 
 
-# Nhúng giá trị vào trong chuỗi
-name, py = 'Python', "Java"
-print('Hello %s. I am %s' % (name, py))
+""" Toán tử identity:
+    - is: True nếu các vế giống hệt nhau (tham chiếu đến cùng một đối tượng)
+    - is not: True nếu các vế không giống hệt nhau (tham chiếu đến khác đối tượng)
+"""
 
-x, y = 123, 987
-print("Gia tri cua x la {}, y la {} và trung binh la: {}".format(x, y, (x+y)/2))
+x = 6
+y = 5
+a = 'Halo'
+b = 'Halo'
+i = [1, 2, 3]
+j = [1, 2, 3]
 
-print("I love {0} and {1}".format('Python', 'JavaScript'))
-print("I love {1} and {0}".format('Python', 'JavaScript'))
-print("Hello {f_name}. I am {my_name}.".format(f_name='John', my_name='PyCore'))
+print(x is not y)
+print(a is b)
+print(i is j)
 
-# Nhúng cả biến, biểu thức vào trong chuỗi
-print(f'{x} + {y} = {x+y}')
+""" Độ ưu tiên của toán tử 
+    - Nguyên tắc PEMDAS: 
+        P   Parentheses, then
+        E   Exponents, then
+        MD  Multiplication and division, left to right, then
+        AS  Addition and subtraction, left to right
+    - Chi tiết tại: https://docs.python.org/3/reference/expressions.html#operator-precedence
+"""
 
+a = 10-7//2*3+1
+# Lần lượt như sau: 7 // 2 = 3 ==> 10 - 3*3 + 1 ==> 3*3 = 9 ==> 10 - 9 + 1 = 2
+print(a)
+
+""" Các hàm toán học"""
+
+# Người dùng nhập vào bán kình đường tròn, tính diện tích in ra màn hình
+radius = float(input("Nhập bán kính = "))
+area = 3.14 * radius ** 2
+print("Hình tròn bán kính {} thì diện tích là {}".format(radius, area))
+
+
+import math
+
+radis = float(input("Nhập bán kính = "))
+area = math.pi * radis ** 2
+print("Hình tròn bán kình {} thì diện tích là {}".format(radis, round(area, 3)))
+
+""" Một số hàm và hằng số trong module math
+    - Hằng số: math.pi, math.e
+    - Căn bậc 2: math.sqrt(x)
+    - Làm tròn xuống: math.floor(x); Làm tròn lên: math.ceil(x); Bỏ phần thập phân: math.trunc(x)
+    - Giai thừa: math.factorial(n)
+    - Ước chung lớn nhất: math.gcd(a, b)
+    - Lượng giác: math.sin(x), math.cos(x), math.tan(x), math.asin(x), .... 
+"""
+
+import math
+print(math.pi)
+print(math.e)
+print(math.floor(0.9))
+print(math.ceil(1.1))
+print(math.trunc(-10.901))
+print(math.factorial(3))
+print(math.gcd(36, 63))

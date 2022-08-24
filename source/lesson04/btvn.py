@@ -1,145 +1,85 @@
 """ BÀI TẬP VỀ NHÀ
 
-Bài 01. Lập chương trình thực hiện công việc sau:
-    1. Nhập ba số a, b, c bất kì từ bàn phím
-    2. Giải nghiệm phương trình bậc 2: ax^2 + bx + c = 0  (Xét tất cả các trường hợp có thể xảy ra)
+Bài 01. Viết chương trình thay thế tất cả các ký tự giống ký tự đầu tiên của một Chuỗi thành $.
 
-Bài 02. Lập chương trình tính các tổng sau:
-    S_1 = 1 + x + x^2 + x^3 + ... + x^n
-    S_2 = 1 - x + x^2 - x^3 + ... + (-1)^n.x^n
-    S_3 = 1 + x/1! + x^2/2! + ... + x^n/n!
-    Trong đó, n là số nguyên dương và x là một số thực bất kì. Cả 2 đều được nhập từ bàn phím
+Bài 02. Viết chương trình sinh ra một chuỗi từ 2 ký tự đầu và 2 ký tự cuối trong chuỗi được nhập vào,
+    nếu độ dài chuỗi nhỏ hơn 2 thì in ra chuỗi rỗng.
 
-Bài 03. Lập chương trình thực hiện các công việc sau:
-    1. Nhập 1 số nguyên dương n bất kì (n<1000). Yêu cầu kiểm tra dữ liệu đầu vào, nếu sai yêu cầu nhập lại.
-    2. Tính tổng các chữ số của số đó.
-    3. Hiển thị kết qủa ra màn hình
+Bài 03. Viết chương trình tìm ra ký tự lớn nhất và ký tự nhỏ nhất của một chuỗi nhập từ bán phím.
 
-Bài 04. Lập trình thực hiện các công việc sau:
-    1. Nhập 3 số a, b, c bất kì
-    2. Hãy kiểm tra xem ba số đó có phải là độ dài của các cạnh của một tam giác hay không?
-    3. Nếu đúng là tam giác thì xác định là tam giác vuông hay không?
+Bài 04. Viết chương trình đảo ngược từ ký tự thường sang ký tự hoa và từ ký tự hoa sang ký tự thường trong một chuỗi.
 
-Bài 05. Lập chương trình thực hiện các công việc sau:
-    1. Nhập số epsilon < 1 từ bàn phím
-    2. Tính e = 1 + 1/1! + 1/2! + ... + 1/n! quá trình dừng khi 1/n! < epsilon.
-    3. Đưa kết quả ra màn hình
+Bài 05. Viết chương trình in ra các ký tự số trong chuỗi được nhập từ bàn phím
 
-Bài 06. Người dùng nhập vào số n - số hàng để in mô hình kim tự tháp số dạng dọc như ví dụ sau
-- Nếu nhập n = 5 thì in ra:
-1
-12
-123
-1234
-12345
-1234
-123
-12
-1
+Bài 06. Viết chương trình
+    1. Nhập vào 1 chuỗi từ bàn phím
+    2. Nhập vào 1 ký tự từ bàn phím
+    3. Tìm và in ra tất cả các vị trí của ký tự vừa nhập trong chuỗi đã nhập
 """
 
-# Bài 1.
-import math
+# Bài 01: Viết chương trình thay thế tất cả các ký tự giống ký tự đầu tiên của một Chuỗi thành $.
+s_01 = input("Nhập vào một chuỗi: ")
+if len(s_01) > 0:
+    print(s_01.replace(s_01[0], '$'))
+print('Bài 01 - DONE!')
 
-a = float(input("Nhập a: "))
-b = float(input("Nhập b: "))
-c = float(input("Nhập c: "))
 
-if a == 0:
-    if b == 0:
-        if c == 0:
-            print("Phương trình vô số nghiệm")
-        else:
-            print("Phương trình vô nghiệm")
+# Bài 02: Viết chương trình sinh ra một chuỗi từ 2 ký tự đầu và 2 ký tự cuối trong chuỗi được nhập vào,
+# nếu độ dài chuỗi nhỏ hơn 2 thì in ra chuỗi rỗng.
+s_04 = input("Nhập vào một chuỗi: ")
+s_new = ""
+if len(s_04) >= 2:
+    s_new = s_04[0:2] + s_04[-2:]
+print("Chuỗi mới: " + s_new)
+print('Bài 02 - DONE!')
+
+
+# Bài 03: Viết chương trình tìm ra ký tự lớn nhất và ký tự nhỏ nhất của một chuỗi nhập từ bán phím.
+s_05 = input("Nhập vào một chuỗi: ")
+if s_05:
+    c_max, c_min = s_05[0], s_05[0]
+    for c in s_05:
+        if c > c_max:
+            c_max = c
+        elif c < c_min:
+            c_min = c
+    print(f"Ký tự lớn nhất {c_max} và nhỏ nhất {c_min}")
+print('Bài 03 - DONE!')  # Bài này có thể dùng hàm max()/min()
+
+
+# Bài 04: Viết chương trình đảo ngược từ ký tự thường sang ký tự hoa và từ ký tự hoa sang ký tự thường trong một chuỗi.
+s_06 = input("Nhập vào một chuỗi: ")
+s_new = ""
+for c in s_06:
+    if 'a' <= c <= 'z':
+        s_new = s_new + chr(ord(c) - 32)
+    elif 'A' <= c <= 'Z':
+        s_new = s_new + chr(ord(c) + 32)
     else:
-        print(f"Phương trình có nghiệm: x_0 = {-c/b}")
-else:
-    delta = b**2 - 4*a*c
-    if delta < 0:
-        print("Phương trình vô nghiệm thực")
-    elif delta == 0:
-        print(f"Phương trình có nghiệm kép x_0 = {-b/(2*a)}")
-    else:
-        sqrt_delta = math.sqrt(delta)
-        print(f"Phương trình có 2 nghiệm: x_1 = {(-b + sqrt_delta)/(2*a)}, x_2 = {(-b - sqrt_delta)/(2*a)}")
+        s_new = s_new + c
+print("Chuỗi mới: " + s_new)
+print('Bài 04 - DONE!')
+
+# Cách 2: Dùng hàm swapcase()
+s_new_new = s_06.swapcase()
+print(s_new_new)
 
 
-# Bài 2
-x = float(input("Nhập x: "))
-n = int(input("Nhập n:"))
-S1 = 0
-for i in range(n+1):
-    S1 += x ** i
-print(f"Giá trị S1 = {S1}")
+# Bài 05. Viết chương trình in ra các ký tự số trong chuỗi được nhập từ bàn phím
+s = input("Nhập một chuỗi: ")
+for ky_tu in s:
+    if '0' <= ky_tu <= '9':
+        print(ky_tu, end="")
+print('Bài 05 - DONE!')
 
 
-x = float(input("Nhập x: "))
-n = int(input("Nhập n:"))
-S2 = 0
-for i in range(n+1):
-    S2 += (-x) ** i
-print(f"Giá trị S2 = {S2}")
-
-
-x = float(input("Nhập x: "))
-n = int(input("Nhập n:"))
-S3 = 0
-for i in range(n+1):
-    S3 += x ** i / math.factorial(i)
-print(f"Giá trị S3 = {S3}")
-
-
-# Bài 3.
-while True:
-    n = int(input("Nhập giá trị n dương (< 1000): "))
-    if 0 < n < 1000:
-        break
-    print("Nhập chưa đúng, hãy nhập lại!")
-
-tong = 0
-while n > 0:
-    tong += n % 10
-    n //= 10
-print(f"Tổng các chữ số của {n} là {tong}")
-
-
-# Bài 4.
-a = float(input("Nhập cạnh a: "))
-b = float(input("Nhập cạnh b: "))
-c = float(input("Nhập cạnh c: "))
-
-if (a + b > c) and (b + c > a) and (a + c > b):
-    print("Là độ dài 3 cạnh của tam giác.")
-    if a == b and b == c:
-        print("Tam giác đều")
-    elif a == b or b == c or c == a:
-        print("Tam giác cân")
-    if (a**2 + b**2 == c**2) or (b**2 + c**2 == a**2) or (a**2 + c**2 == b**2):
-        print("Tam giác vuông")
-else:
-    print("Không phải độ dài 3 cạnh của tam giác.")
-
-
-# Bài 5.
-epsilon = float(input("Nhập epsilon = "))
-fact_max = 1/epsilon  # Đổi lại điều kiện dừng lặp
-i = 1
-factorial = 1
-value_e = 1
-while factorial <= fact_max:
-    value_e += 1 / factorial
-    i += 1
-    factorial *= i
-print(f'Giá trị của e ~ {value_e}')
-
-# Bài 6.
-n = int(input('n = '))
-
-for i in range(1, n+1):
-    for j in range(1, i+1):
-        print(j, end="")
-    print()
-for i in range(n-1, 0, -1):
-    for j in range(1, i+1):
-        print(j, end="")
-    print()
+# Bài 06. Viết chương trình
+#     1. Nhập vào 1 chuỗi từ bàn phím
+#     2. Nhập vào 1 ký tự từ bàn phím
+#     3. Tìm và in ra tất cả các vị trí của ký tự vừa nhập trong chuỗi đã nhập
+s = input("Nhập một chuỗi: ")
+a = input("Nhập vào một ký tự: ")
+for i in range(len(s)):
+    if s[i] == a:
+        print(i, end=" ")
+print('Bài 06 - DONE!')

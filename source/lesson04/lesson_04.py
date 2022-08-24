@@ -2,281 +2,289 @@
 __author__ = "hoanbk02@gmail.com"
 __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
-""" Câu lệnh điều khiển 
-    - Conditional Statements: if, if-else, nested if-else
-    - Loop: for, while, nested loops
-    - Control loop: break, continue, pass, return
+
+""" Ký tự và Chuỗi
+    - Tạo chuỗi
+    - Truy cập chuỗi
+    - Phép toán cơ bản
+    - Hàm và phương thức làm việc với chuỗi
 """
 
-""" Câu lệnh rẽ nhánh
-    Khi trong bài toán xuất hiện việc điều khiển chương trình theo một số hướng nhất định,
-    nên đã xuất hiện câu lệnh điều kiện.
+"""
+- String hay còn gọi là xâu, hay còn gọi là chuỗi: Là một chuỗi liên tiếp các Ký tự
+- Ký tự là các chữ cái, chữ số cũng như dấu, ...
+
+Một chuỗi có thể được tạo ra bằng nhiều cách:
+    - Nhập dữ liệu vào từ bàn phím với hàm input()
+    - Khai báo trong cặp nháy đơn, cặp nháy kép, cặp 3 nháy đơn, cặp 3 nháy kép
+    - Kết quả của các phép toán với chuỗi: cộng chuỗi, nhân chuỗi với 1 số, ...
+    - Ép kiểu sang chuỗi với hàm str()
+    - Đọc từ file, ...
 """
 
-# Ví dụ: Viết chương trình kiểm tra số nhập vào là số dương hay không.
-# => Với các thứ đã học thì ko làm được ví dụ này
+your_string = """Your string - line 1
+Your string - line 2
+Your string - line 3
+- Multi-line - """
+print(your_string)
 
-""" 
-Cú pháp của if
+my_string = "My string"
+print(my_string)
 
-    if biểu_thức_điều_kiện:
-        các câu lệnh cần chạy nếu biểu_thức_điều_kiện là đúng (True)
+print(my_string * 3)  # Lặp lại chuỗi
+print(my_string + my_string)  # Nối chuỗi
 
+""" Độ dài chuỗi
+    - Số lượng các ký tự trong chuỗi được gọi là chiều dài của chuỗi
+    - Để tính chiều dài, chúng ta dùng hàm len()
+"""
+s = "123 456,789!abc"
+print(len(s))  # 3 chữ cái, 9 chữ số, 1 dấy phẩy, 1 dấu chấm than và 1 dấu cách
+
+
+""" Accessing Strings. Truy cập vào các ký tự trong Chuỗi.
+    - Chúng ta có thể truy cập từng ký tự bằng chỉ số (index) hoặc một đoạn ký tự bằng cắt (slicing).
+    - Index các ký tự trong chuỗi được đánh số từ trái qua phải và bắt đầu từ 0:
+      ký tự đầu tiên là 0, ký tự thứ 2 là 1, ..., ký tự cuối cùng là (độ dài - 1)
+"""
+s = "Python!"
+print(s[0])
+print(s[1])
+print(s[len(s) - 1])
+
+print(s[len(s)])  # Lỗi vượt quá chỉ số: IndexError: string index out of range
+
+""" Minh họa về chỉ số của chuỗi
+    String s    P       y       t       h       o       n       !
+    Chỉ số      0       1       2       3       4       5       6
+    Truy cập    s[0]    s[1]    s[2]    s[3]    s[4]    s[5]    s[6]
 """
 
-n = float(input("Nhập n = "))
-if n > 0:
-    print('n = {} là số dương!'.format(n))
-print('Đây là lệnh ngoài if, nó luôn luôn được in ra!')
+""" Truy cập đến ký tự trong chuỗi = chỉ số âm
+    String s    P       y       t       h       o       n       !
+    Chỉ số      0       1       2       3       4       5       6
+    Chỉ số âm   -7      -6      -5      -4      -3      -2      -1
+    Truy cập    s[0]    s[1]    s[2]    s[3]    s[4]    s[5]    s[6]
+    Truy cập    s[-7]   s[-6]   s[-5]   s[-4]   s[-3]   s[-2]   s[-1]
+"""
+s = "Python!"
+print(s[-1])
+print(s[-2])
+print(s[-len(s)])
 
-# Ví dụ áp dụng: Nhập vào 1 số nguyên và in ra giá trị tuyệt đối của số đó
-n = int(input("Nhập n = "))
-if n < 0:
-    n = -n
-print(n)
+print(s[-len(s) - 1])  # Lỗi vượt quá chỉ số: IndexError: string index out of range
+
+# Chú ý: Chúng ta chỉ có thể dùng chỉ số có giá trị từ -len(s) đến len(s) - 1
 
 
-""" Cú pháp của if-else
-    if biểu_thức_điều_kiện:
-        các câu lệnh cần chạy nếu biểu_thức_điều_kiện là Đúng (True)
-    else:
-        các câu lệnh cần chạy nếu biểu_thức_điều_kiện là Sai (False)
+""" Kỹ thuật cắt chuỗi - Slicing - Cơ bản
+    - Dùng để lấy 1 phần từ chuỗi gốc, tạo ra chuỗi con - substring
+    - Cú pháp s[i: j] trả lại 1 chuỗi con có (j-i) ký tự, bắt đầu từ ký tự có chỉ số i đến (j-1) (ko bao gồm s[j])
+    => Giống kiểu làm việc của hàm range(i, j)
+    - Chú ý đặc biệt:
+        + s[:j]: mặc định lấy từ đầu chuỗi đến (j-1)
+        + s[i:]: mặc định lấy từ i đến cuối chuỗi
+        + => s[:]: trả ra chính chuỗi s
 """
 
-# Chương trình kiểm tra số nhập vào là dương hay không dương
-n = float(input("Nhập n = "))
-if n > 0:
-    print('n = {} là số dương!'.format(n))
-else:
-    print('n = {} là số không dương!'.format(n))
+s = 'Python Core'
+print(s[2:8])
+print(s[0:6])
+print(s[7: len(s)])
+print(s[-9: -1])
+print(s[5: -3])
 
+print(s[:6])
+print(s[7:])
+print(s[:])
 
-""" Cú pháp của if-elif-else
-    if biểu_thức_điều_kiện_01:
-        các câu lệnh cần chạy nếu biểu_thức_điều_kiện_01 là Đúng (True)
-    elif biểu_thức_điều_kiện_02:
-        các câu lệnh cần chạy nếu biểu_thức_điều_kiện_02 là Đúng (True)
-    else:
-        các câu lệnh cần chạy nếu các biểu_thức_điều_kiện ở trên đềy là Sai (False)
+"""  Kỹ thuật cắt chuỗi - Slicing - Nâng cao - Cắt với bước nhảy
+    - Cú pháp s[i:j:a] trả lại chuỗi gồm các ký tự có chỉ số cách đều nhau một đoạn a, bắt đầu từ i đến trước j
+    => Giống cơ chế làm việc của hàm range(i,j,a)
 """
-n = float(input("Nhập n = "))
-if n == 0:
-    print('n là số 0')
-elif n > 0:
-    print('n = {} là số dương!'.format(n))
-else:
-    print('n = {} là số âm!'.format(n))
+s = 'Python Core'
+print(s[::2])  # lấy các ký tự ở chỉ số chẵn
+print(s[1::2])  # lấy các ký tự ở chỉ số lẻ
+print(s[2:-1:3])
 
-
-""" Chương trình: Nhập vào 2 số nguyên, in ra màn hình:
-    + Tổng của 2 số đó, nếu cả 2 số đều dương
-    + Tích của 2 số đó nếu cả 2 số đều âm
-    + Nếu không in ra màn hình số nhỏ hơn trong 2 số đó
+"""  Kỹ thuật cắt chuỗi - Slicing - Nâng cao - Cắt với bước nhảy âm
+    => Giống cơ chế làm việc của hàm range(i,j,a) với a là số âm
+    - Cú pháp s[i:j: -a] trả lại chuỗi gồm các ký tự có chỉ số cách đều nhau một đoạn a, bắt đầu từ i lùi dần về trước j
 """
-a = int(input("Nhập a = "))
-b = int(input("Nhập b = "))
-if a > 0 and b > 0:
-    print('Tổng = ', a + b)
-elif a < 0 and b < 0:
-    print('Tích = ', a * b)
-else:
-    if a < b:
-        print(a)
-    else:
-        print(b)
-# Cách khác cho else: print(a) if a < b else print(b) hoặc print(a if a < b else b)
+s = 'Python Core'
+print(s[8:2:-2])
+print(s[::-1])  # cách lấy ra chuỗi đảo của s
+print(s[-2::-3])
 
 
-"""
-- Các chương trình máy tính thường sẽ thực hiện lặp đi lặp lại một số câu lệnh nào đó => gọi là vòng lặp
-- Python có 2 dạng vòng lặp for và while
+""" Kiểm tra membership - đã được giới thiệu từ bài trước 
+    - Toán tử in: True - Nếu có trong chuỗi, False - Nếu không có trong chuỗi
+    - Toán tử not in: Ngược lại với in
 """
 
-""" 
-Cú pháp cho vòng for
+_str = 'Membership DC'
+print('m' in _str)
+print('mem' not in _str)
 
-    for i in sequence:
-        các câu lệnh sẽ chạy của mỗi vòng lặp
 
+""" Change or Delete Chuỗi
+    - Trong Python, chuỗi sau khi được tạo ra thì không thể thay đổi được (Strings are immutable).
+"""
+s = 'python'
+s[1] = 'i'  # Lỗi: TypeError: 'str' object does not support item assignment
+del s[0]  # Lỗi: TypeError: 'str' object doesn't support item deletion
+
+
+""" Mã - Code của ký tự
+    + Trong máy tính, mọi dữ liệu đều được lưu thành số - chính xác là dạng số nhị phân
+    + Mỗi ký tự được lưu thành một số khác nhau, được gọi là mã - code
+    + Danh sách các mã của các ký tự được gọi là bảng mã
+    + Bảng mã đơn giản nhất là bảng mã ASCII gồm 256 ký tự, đánh số từ 0 đến 255,
+    trong đó gồm tất cả các ký tự ta có thẻ nhìn thấy trên bàn phím máy tính
+    + Bảng mã phổ biến nhất hiện nay là Unicode, chứa hầu hết các ngôn ngữ trên thế giới, ký tự toán học, biểu tượng cảm xúc, ...
 """
 
-# Ví dụ: In ra cá giá trị nguyên từ 0 đến 9
-for i in range(10):
-    print(i)
-
-""" Hàm range(start=0, stop, step_size=1): Generate a sequence of numbers
-    + start: giá trị bắt đầu sinh, mặc định = 0
-    + stop: giá trị kết thúc sinh, có nghĩa là sinh đến giá trị bé hơn stop. Không có mặc định
-    + step_size: bước nhảy để sinh các giá trị tiếp theo từ start (nhận cả giá trị âm và dương), mặc định = 1
+""" Bảng mã ASCII
+    + Chữ cái từ A đến Z có mã tương ứng từ 65 đến 90
+    + Chữ cái từ a đến z có mã tương ứng từ 97 đến 122
+    + Chữ số từ 0 đến 9 có mã tương ứng từ 48 đến 57
+    + Dấu cách có mã 32
 """
 
-# range(10)  => range(0, 10, 1)
-# range(0, 10, 2)  => 0, 2, 4, 6, 8
-# range(1, 10, 2) => 1, 3, 5, 7, 9
-# range(0, -10, -2) => 0, -2, -4, -6, -8
-# range(-10, 0, 2) => -10, -8, -6, -4, -2
+"""
+- Lấy mã của ký tự dùng hàm ord(ký_tự_muốn_lấy_mã)
+- Chuyển từ mã ra ký tự dùng hàm chr(mã_muốn_chuyển)
+"""
+print(ord('A'))
+print(ord('Z'))
+print(ord('b'))
+print(ord('z'))
+print(ord('5'))
+
+print(chr(97))
+print(chr(ord('a') - 32))
 
 
-# Ví dụ: In ra cá giá trị nguyên chẵn có một chữ số
-for i in range(0, 10, 2):
-    print(i, end=" ")
-
-""" Hàm print(*args, sep=' ', end='\n', file=None):
-    + *args: Cho phép in nhiều giá trị cùng lúc
-    + sep: Kí tự dùng để phân tách các giá trị cần in. Mặc định là 1 khoảng trắng
-    + end: Kí tự kết thúc sau khi in xong tất cả các giá trị. Mặc định là xuống dòng
+""" So sánh ký tự
+    - Do mỗi ký tự tưng ứng với mã của nó, nên ta có thể so sánh 2 ký tự với nhau.
+    - Kết quả của các phép so sánh chính là kết quả của so sánh 2 mã tương ứng với ký tự.
+    Ví dụ: 'A' < 'X' => True, 'a' < 'A' => False, 'H' == 'H' => True
 """
 
-# Nhập vào 2 số nguyên a, b. In ra các số nguyên nằm giữa a và b trên cùng 1 dòng.
+""" So sánh hai chuỗi với nhau bằng cách so sánh từng ký tự có trong cùng chỉ số của từng chuỗi, từ trái qua phái:
+    + 1: So sánh 2 ký tự đầu tiên, ký tự của chuỗi nào lớn hơn thì chuỗi lớn hơn, nếu chúng bằng nhau thì qua bước 2
+    + 2. So sánh 2 ký tự ở vị trí tiếp theo, ký tự của chuỗi nào lớn hơn thì chuỗi lớn hơn, nếu không thì chuyển qua ký tự tiếp sau.
+    + 3. Cứ như vậy lần lượt so sánh các ký tự cho đến khi gặp ký tự mà 2 chuỗi khác nhau hoặc một trong hai chuỗi không còn ký tự nào.
+    Khi đó:
+        - Nếu gặp ký tự mà 2 chuỗi khác nhau, thì ký tự của chuỗi nào lớn hơn thì chuỗi lớn hơn
+        - Nếu cả 2 chuỗi đều không còn ký tự nào để so sánh thì 2 chuỗi đó bằng nhau
+        - Nếu một chuỗi không còn ký tự nào để so sánh, chuỗi còn lại vẫn còn, thì chuỗi dài hơn sẽ lớn hơn
+"""
+print('A' < 'X')
+print('z' != 'Z')
 
-a, b = int(input("Nhập a = ")), int(input("Nhập b = "))
-if a > b:
-    a, b = b, a
-for i in range(a+1, b):
-    print(i, end=" ")
-
-# Ví dụ: Nhập vào số tự nhiên n, rồi tính giai thừa của n
-n = int(input("Nhập n = "))
-factorial = 1
-for i in range(1, n + 1):
-    factorial *= i
-print(f"{n}! = {factorial}")
-
-# Ví dụ: Nhập vào số tự nhiên n, tính tổng các số chia hết cho 3 mà nhỏ hơn n
-n = int(input("Nhập n = "))
-sum_three = 0
-for i in range(0, n, 3):
-    sum_three += i
-print("Tổng các số nhỏ hơn {} mà chia hết cho 3 là: {}".format(n, sum_three))
-
-""" Nested for - Các lệnh for lồng nhau hay for trong for """
-
-# Ví dụ: In ra màn hình hình một hình chữ nhật toán các ký tự * kích thước n, m
-n, m = int(input("Nhập n = ")), int(input("Nhập m = "))
-for i in range(n):
-    for j in range(m):
-        print("*", end="")
-    print()
+s = 'programming'
+print(s == 'program')
+print(s > 'program')
+print(s < 'pro')
+print(s >= "")
 
 
-""" 
-Cú pháp cho vòng while
+""" Iterating: Duyệt các ký tự trong chuỗi
+Để làm việc với từng ký tự trong chuỗi, ta có thể dùng vòng lặp for để duyệt theo chỉ số hoặc duyệt trực tiếp từng ký tự
+"""
+# Ví dụ: Đếm xem trong chuỗi vừa nhập từ bàn phím có bao nhiêu ký tự chữ số
+# Cách 1: Dùng chỉ số => Dùng khi cần quan tâm đến chỉ số
+s = input("Chuỗi s: ")
+count = 0
+for i in range(len(s)):
+    if '0' <= s[i] <= '9':
+        count += 1
 
-    while biểu_thức_điều_kiện:
-        các câu lệnh sẽ chạy của mỗi vòng while, một vòng while được chạy khi biểu_thức_điều_kiện là Đúng (True)
+print(f"Số lượng ký tự số trong '{s}': {count}")
 
+# Cách 2: Duyệt trực tiếp
+s = input("Chuỗi s: ")
+count = 0
+for item in s:
+    if '0' <= item <= '9':
+        count += 1
+
+print(f"Số lượng ký tự số trong '{s}': {count}")
+
+# Ví dụ: In ra các ký tự số trong chuỗi được nhập từ bàn phím
+s = input("Nhập một chuỗi: ")
+# Cách 1
+for i in range(len(s)):
+    if '0' <= s[i] <= '9':
+        print(s[i], end="")
+print()
+# Cách 2:
+for ky_tu in s:
+    if '0' <= ky_tu <= '9':
+        print(ky_tu, end="")
+
+# Ví dụ: Lấy tất cả các vị trí của ký tự 'a' trong chuỗi
+s = input("Nhập một chuỗi: ")
+for i in range(len(s)):
+    if s[i] == 'a':
+        print(i, end=" ")
+
+
+""" Các hàm phổ biến với chuỗi. Để gọi hàm trên chuỗi s ta dùng cú pháp s.tên_hàm(tham_số_nếu_cần)
+    Tên hàm         Ý nghĩa
+    s.upper()	    Chuyển tất các chữ cái trong chuỗi s thành chữ IN HOA
+    s.lower()	    Chuyển tất các chữ cái trong chuỗi s thành chữ in thường
+    s.title()	    Viết hoa các chữ cái ở đầu các từ và viết thường các ký tự khác trong chuỗi s
+    s.strip()	    Xóa bỏ tất khoảng trắng ở đầu và cuối chuỗi s
+    s.lstrip()	    Xóa bỏ tất khoảng trắng ở đầu chuỗi s
+    s.rstrip()	    Xóa bỏ tất khoảng trắng ở cuối chuỗi s
 """
 
-# Nhập vào một số tự nhiên n rồi tính tổng các số tự nhiên đến n
-n = int(input("Nhập n = "))
-i = 0
-sum_n = 0
-while i <= n:
-    sum_n = sum_n + i
-    i += 1  # tăng biến đếm lên 1
-print(f"Tổng các số tự nhiên đến {n} là: {sum_n}")
-
-# Nhập vào một số tự nhiên x, tìm số n lớn nhất mà tổng các số tự nhiên đến n không vượt quá x
-x = int(input("Nhập x = "))
-n = 0
-sum_n = 0
-while sum_n <= x:
-    n += 1
-    sum_n = sum_n + n
-
-print(f"Số n lớn nhất là {n-1}")
-
-""" Lập chương trình thực hiện các công việc sau:
-    + Nhập số epsilon < 1  từ bàn phím
-    + Tính e = 1+\dfrac{1}{1!} + \dfrac{1}{2!} + ... +\dfrac{1}{n!} quá trình dừng khi \dfrac{1}{n!} <  epsilon.
-    + Đưa kết quả ra màn hình
-"""
-epsilon = float(input("Nhập epsilon = "))
-fact_max = 1/epsilon  # Đổi lại điều kiện dừng lặp
-i = 1
-factorial = 1
-value_e = 1
-while factorial <= fact_max:
-    value_e += 1 / factorial
-    i += 1
-    factorial *= i
-print('Giá trị của e ~ ', value_e)
-
-""" Nested while và Nested for-while: Giống như phần Nested for """
-outer = 1
-while outer < 2:
-    inner = 3
-    while inner < 6:
-        print(outer, ':', inner)
-        inner += 1
-    outer += 1
+print(s.upper())
+print(s.lower())
+print(s.title())
+print(s.strip())
+print(s.lstrip())
+print(s.rstrip())
 
 
-""" 
-    Thay đổi luồng của vòng lặp. Các câu lệnh trong vòng lặp sẽ chạy mãi cho đến khi biểu_thức_điều_kiện Sai(False).
-    Trong nhiều trường hợp, cần dừng vòng lặp hiện tại hoặc dừng hoàn toàn vòng lặp.
+""" Tìm kiếm và thay thế trong chuỗi
+    Tên hàm	            Ý nghĩa
+    s.count(sub)	Đếm số lần xuất hiện của chuỗi sub trong chuỗi s (trả ra số nguyên)
+    s.find(sub)	        Trả ra chỉ số (vị trí) đầu tiên bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
+    s.rfind(sub)	    Trả ra chỉ số cuối cùng bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
+    s.startswith(sub)	Trả ra True nếu chuỗi s bắt đầu bằng chuỗi sub
+    s.endswith(sub)	    Trả ra True nếu chuỗi s kết thúc bằng chuỗi sub
+    s.replace(s1, s2)	Trả ra chuỗi mới bằng cách thay thế TẤT CẢ các chuỗi s1 trong s thành s2
 """
 
-""" Cú pháp của break - dừng toàn bộ việc lặp
-        for val in sequence:
-            ...
-            if điều_kiện:
-                break
-            ...
-        ...
+s = " Hello. i am plusPlus!    "
+print(s.count('us'))
+print(s.count('l'))
 
-        while biểu_thức_điều_kiện_w:
-            ...
-            if điều_kiện:
-                break
-            ...
-        ...
-"""
-# Viết chương trình kiểm tra số mà người dùng nhập vào là số dương thì dừng lại
+s = 'python is amazing'
+print(s.find('on'))
+print(s.find('Python'))
+print(s.rfind('n'))
+print(s.startswith("Py"))
+print(s.endswith("ing"))
+print(s.replace('is', 'are'))
 
-while True:
-    print("Nhập 1 số nguyên:", end=" ")
-    n = int(input())
-    if n > 0:
-        print("Đã nhập số dương. Chương trình đã dừng lại!")
-        break
-    print("Đã nhập số âm. Chương trình sẽ tiếp tục!")
 
-""" Cú pháp của continue - dừng vòng lặp hiện tại
-        for val in sequence:
-            ...
-            if điều_kiện:
-                continue
-            ...
-        ...
-
-        while biểu_thức_điều_kiện_w:
-            ...
-            if điều_kiện:
-                continue
-            ...
-        ...
+""" Định dạng dữ liệu bằng f-strings
+Cú pháp f-strings được giới thiệu từ Python 3.6, ngắn gọn hơn mạnh mẽ hơn, cho phép chèn giá trị biến hoặc nhúng cả biểu thức vào trong chuỗi
 """
 
-# Chương trình chỉ in ra các số có 2 chữ số và ko chia hết cho 1 trong các số 2, 3, 5
-for i in range(10, 100):
-    if i % 2 == 0 or i % 3 == 0 or i % 5 == 0:
-        continue
-    print(i, end=" ")
+import math
+name, age = 'Python', '30'
+a, b = 3, 4.5
 
+print(f"{name} is {age} years old.")
+print(f"PI number: {math.pi:10.4}")  # ko nói gì thì mặc định là 6 chữ số thập phân, nhưng ở đây lấy 4
+print(f"Diện tích hình chữ nhật {a}x{b} = {a*b:.3}")
 
-""" pass
-    - Là 1 câu lệnh rỗng
-    - Trình thông dịch có thông dịch qua nó nhưng sẽ ko có chuyện gì xảy ra. Khác với comment, trình thông dịch bỏ qua
-    - Dùng trong khi mà chúng ta chưa nghĩ ra phần thân cho các câu lệnh if, else, for, while, ...
-"""
+from datetime import datetime
+today = datetime.today()
+print(f"Today: {today:%B %d, %Y}")
 
-for i in range(10):
-    pass
-
-
-_str = 'example-pass'
-if 'a' in _str:
-    pass
-
-""" return => sẽ giới thiệu trong phần học về function """

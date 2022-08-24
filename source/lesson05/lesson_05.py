@@ -3,288 +3,203 @@ __author__ = "hoanbk02@gmail.com"
 __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
 
-""" Ký tự và Chuỗi
-    - Tạo chuỗi
-    - Truy cập chuỗi
-    - Phép toán cơ bản
-    - Hàm và phương thức làm việc với chuỗi
+""" List
+    - Tạo, truy cập
+    - Các toán tử cơ bản
+    - Hàm và phương thức hay dùng    
 """
 
-"""
-- String hay còn gọi là xâu, hay còn gọi là chuỗi: Là một chuỗi liên tiếp các Ký tự
-- Ký tự là các chữ cái, chữ số cũng như dấu, ...
-
-Một chuỗi có thể được tạo ra bằng nhiều cách:
-    - Nhập dữ liệu vào từ bàn phím với hàm input()
-    - Khai báo trong cặp nháy đơn, cặp nháy kép, cặp 3 nháy đơn, cặp 3 nháy kép
-    - Kết quả của các phép toán với chuỗi: cộng chuỗi, nhân chuỗi với 1 số, ...
-    - Ép kiểu sang chuỗi với hàm str()
-    - Đọc từ file, ...
+""" Introduction
+    - Python cung cấp cho chúng ta một loạt các kiểu dữ liệu hỗn hợp, dạng là một chuỗi liên tiếp gì đó.
+    - Trong đó, kiểu dữ liệu List - rất linh hoạt và được dùng thường xuyên nhất.
 """
 
-your_string = """Your string - line 1
-Your string - line 2
-Your string - line 3
-- Multi-line - """
-print(your_string)
+# Cách tạo ra một list: Đặt các phần tử vào trong cặp ngoặc vuông và cách nhau bởi dấu phẩy (,)
+empty_list = []  # Một list rỗng = list không có phần tử nào
+my_list = [26, 10, 1992, 28, -2000]  # Một list chứa các số nguyên
+your_list = [1, 'hi', 'greeting', 3.14]  # Một list hỗn hợp các kiểu dữ liệu
+our_list = ['123-string', [0, 1], ['str1', 'str-2'], [empty_list, my_list, your_list]]  # Nested list
 
-my_string = "My string"
-print(my_string)
 
-print(my_string * 3)  # Lặp lại chuỗi
-print(my_string + my_string)  # Nối chuỗi
-
-""" Độ dài chuỗi
-    - Số lượng các ký tự trong chuỗi được gọi là chiều dài của chuỗi
-    - Để tính chiều dài, chúng ta dùng hàm len()
+""" Truy cập vào list (=> Giống với chuỗi. Ta có thể coi chuỗi là 1 list, mỗi phần tử là một ký tự)
+    - Bằng chỉ số dương: Truy cập bằng chỉ số với toán tử []. Chỉ số được đánh từ 0, đến (Số lượng phần tử - 1).
+     Cố tính truy cập vào một gia trị chỉ số khác sẽ báo lỗi IndexError
+    - Bằng chỉ số âm: Chỉ số âm được đánh như sau: -1 là phần tử cuối cùng, ..., đến -(số lượng phần tử) là phần tử đầu tiên
+    - Bằng đoạn cắt: Sử dụng toán tử đoạn cắt [::]
 """
-s = "123 456,789!abc"
-print(len(s))  # 3 chữ cái, 9 chữ số, 1 dấy phẩy, 1 dấu chấm than và 1 dấu cách
+my_list = ["first", 1, 2, 3, 'l', [4, 5, 6, 7]]
+print(len(my_list))  # Hàm len() trả lại số lượng phần tử trong list
+print(my_list[0])
+print(my_list[3])
+print(my_list[5])
 
+# print(my_list[10])  # Lỗi IndexError: list index out of range
 
-""" Accessing Strings. Truy cập vào các ký tự trong Chuỗi.
-    - Chúng ta có thể truy cập từng ký tự bằng chỉ số (index) hoặc một đoạn ký tự bằng cắt (slicing).
-    - Index các ký tự trong chuỗi được đánh số từ trái qua phải và bắt đầu từ 0:
-      ký tự đầu tiên là 0, ký tự thứ 2 là 1, ..., ký tự cuối cùng là (độ dài - 1)
+# Trong trường hợp trên là có list lồng nhau
+print(my_list[5][2])  # Truy cập đến list con bằng [5], sau đó truy cập vào phần tử của list con bằng [2]
+print(my_list[0][1])  # Truy cập vào phần tử đầu tiên của my_list => được 1 chuỗi, rồi truy cập vào phần tử thứ 2 của chuỗi
+
+print(my_list[-2])  # Truy cập phần tử thứ 2 từ cuối lên
+print(my_list[-1][-1])  # Truy cập vào phần tử cuối cùng trong phần tử cuối cùng của my_list
+print(my_list[0][-3])  # Truy cập vào phần tử thứ 3 từ cuối lên trong phần tử đầu tiên của my_list
+
+print(my_list[2:5])
+print(my_list[:-3])
+print(my_list[3:])
+print(my_list[::3])
+print(my_list[::-1])
+
+""" Các phép toán với kiểu dữ liệu list. Khác với chuỗi thì list là kiểu có thể thay đổi được.
+    Sau đây là minh họa cho các phép toán trên list
 """
-s = "Python!"
-print(s[0])
-print(s[1])
-print(s[len(s) - 1])
+# Phép toán gán (=): Dùng phép gán (=) để thay đổi 1 hoặc 1 đoạn phần tử tại chỉ số nào đó của list
+my_list = [0, 1, 2, 4, 4, 5, 10]
+my_list[3] = 1992
+my_list[-1] = 2020
+print(my_list)
+my_list[1:4] = [-1, -2, -3]
+print(my_list)
 
-print(s[len(s)])  # Lỗi vượt quá chỉ số: IndexError: string index out of range
+# Thêm một phần tử vào list bằng phương thức append() hoặc thêm một list vào 1 list bằng phương thức extend().
+# => Luôn luôn là thêm vào cuỗi list gốc trở đi
+your_list = [0, 1, 2]
+your_list.append(3)
+print(your_list)
+your_list.extend([-3, -2, -1])
+print(your_list)
 
-""" Minh họa về chỉ số của chuỗi
-    String s    P       y       t       h       o       n       !
-    Chỉ số      0       1       2       3       4       5       6
-    Truy cập    s[0]    s[1]    s[2]    s[3]    s[4]    s[5]    s[6]
+# Chèn thêm 1 phần tử mới vào list bằng phương thức insert(index, value)
+# Chèn thêm nhiều phần tử mới vào list bằng cách ép các phần tử đó vào 1 đoạn cắt rỗng [vị_trí_chèn:vị_trí_chèn]
+my_list = [0, 2, 6, 7]
+my_list.insert(2, 4)
+print(my_list)
+my_list[3:3] = [5, -5, -6, -7]  # thử cả với my_list[-3:-3] = [5, -5, -6, -7]
+print(my_list)
+
+# Xóa một hoặc nhiều phần tử trong list xử dụng toán tử del
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+del my_list[3]
+print(my_list)
+del my_list[-2]
+print(my_list)
+del my_list[2:4]
+print(my_list)
+del my_list[-3:-1]
+print(my_list)
+del my_list  # Xóa cả list đi
+print(my_list)  # Lỗi: NameError: name 'my_list' is not defined
+
+# Ngoài ra còn có thể dùng remove(phần_tử_muốn_xóa) hoặc pop(vị_trí_phần_tử_muốn_xóa)
+# hoặc clear() để xóa hết các phần tử, tạo ra List rỗng
+my_list = [0, 1, 2, 3, 8, 5, 6, 7, 8, 9]
+my_list.remove(8)  # Xóa đi phần tử đầu tiên từ trái sang phải = phần tử muốn xóa
+print(my_list)
+my_list.remove(1990)  # Lỗi: ValueError: list.remove(x): x not in list
+print(my_list.pop(3))  # Xóa đi và trả lại phần tử tại chỉ số 3
+print(my_list)
+print(my_list.pop())  # Xóa đi và trả lại phần tử tại vị trí cuối cùng
+print(my_list)
+
+my_list.clear()
+print(my_list)
+
+# Thêm nữa, có thể xóa các phần tử bằng cách dùng gán mảng rỗng vào 1 đoạn cắt
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+my_list[2:4] = []
+print(my_list)
+
+# Phép toán cộng (+) 2 list để ra được list mới - chính là nối 2 list.
+# Phép toán nhân list với số nguyên dương n, để ra được 1 list mới lặp n lần
+our_list = [0, 1]
+print(our_list + [-3, -2, -1])
+print(our_list * 3)
+
+""" Danh sách các method của kiểu dữ liệu list
+    - list.append(element): Thêm một phần tử element vào cuối list
+    - list.extend(list2): Thêm nhiều phần tử trong list2 vào cuối của list
+    - list.insert(index, element): Thêm phần tử element vào chỉ số index trong list
+    - list.remove(element): Xóa phần tử element đầu tiên từ trái sang phải trong list nếu có, ko có sẽ lỗi
+    - list.pop(index=-1): Xóa và trả lại giá trị phần tử tại chỉ số index
+    - list.clear(): Xóa bỏ toàn bộ các phần tử => mảng rỗng
+    - list.count(element): Đếm số lượng element trong list
+    - list.reverse(): Đảo ngược list
+    - list.sort(key=..., reverse=...): Sắp xếp list theo key nào đó, theo chiều tăng/giảm (reverse=True => giảm)
+    <=> sorted(list, key=..., reverse=...)
+    - list.copy(): Trả lại bản sao của list
 """
+my_list = [0, 1, 2, 0, 3, 2, 5, 2]
+print(f"Số lượng phần tử giá trị 2: {my_list.count(2)}")
+my_list.reverse()
+print(my_list)
 
-""" Truy cập đến ký tự trong chuỗi = chỉ số âm
-    String s    P       y       t       h       o       n       !
-    Chỉ số      0       1       2       3       4       5       6
-    Chỉ số âm   -7      -6      -5      -4      -3      -2      -1
-    Truy cập    s[0]    s[1]    s[2]    s[3]    s[4]    s[5]    s[6]
-    Truy cập    s[-7]   s[-6]   s[-5]   s[-4]   s[-3]   s[-2]   s[-1]
+print(sorted(my_list))  # sorted() ko làm thay đổi list gốc
+print(my_list)
+my_list.sort()
+print(my_list)  # sort() ko trả kết quả mà thay đổi ngay trong list gốc
+
+""" Kiểm tra tồn tại:
+    - in: kiểm tra xem có trong list không
+    - not in: kiểm tra xem không có trong list
 """
-s = "Python!"
-print(s[-1])
-print(s[-2])
-print(s[-len(s)])
+languages = ["C/C++", "Python", "Java", "JavaScript"]
+print("python" in languages)
+print("Python" in languages)
+print("C#" not in languages)
 
-print(s[-len(s) - 1])  # Lỗi vượt quá chỉ số: IndexError: string index out of range
-
-# Chú ý: Chúng ta chỉ có thể dùng chỉ số có giá trị từ -len(s) đến len(s) - 1
-
-
-""" Kỹ thuật cắt chuỗi - Slicing - Cơ bản
-    - Dùng để lấy 1 phần từ chuỗi gốc, tạo ra chuỗi con - substring
-    - Cú pháp s[i: j] trả lại 1 chuỗi con có (j-i) ký tự, bắt đầu từ ký tự có chỉ số i đến (j-1) (ko bao gồm s[j])
-    => Giống kiểu làm việc của hàm range(i, j)
-    - Chú ý đặc biệt:
-        + s[:j]: mặc định lấy từ đầu chuỗi đến (j-1)
-        + s[i:]: mặc định lấy từ i đến cuối chuỗi
-        + => s[:]: trả ra chính chuỗi s
+""" Duyệt list:
+    - Qua chỉ số của list
+    - Qua phép toán in
 """
+languages = ["C/C++", "Python", "Java", "JavaScript"]
+for i in range(len(languages)):
+    print(f"I can use {languages[i]}")
 
-s = 'Python Core'
-print(s[2:8])
-print(s[0:6])
-print(s[7: len(s)])
-print(s[-9: -1])
-print(s[5: -3])
+print("===> Duyệt theo toán tử in:")
+for lg in languages:
+    print(f"I can use {lg}")
 
-print(s[:6])
-print(s[7:])
-print(s[:])
 
-"""  Kỹ thuật cắt chuỗi - Slicing - Nâng cao - Cắt với bước nhảy
-    - Cú pháp s[i:j:a] trả lại chuỗi gồm các ký tự có chỉ số cách đều nhau một đoạn a, bắt đầu từ i đến trước j
-    => Giống cơ chế làm việc của hàm range(i,j,a)
+# List Comprehension: Tạo một list mới từ list cũ một cách bao quát
+# Ví dụ: Sinh một list chứa 5 số đầu của dãy số với công thức tổng quát: Un = 5n^2/(n+1)
+s_number = [5*i**2/(i+1) for i in range(5)]
+print(s_number)
+
+# Ví dụ: Sinh ra các tag từ 2 list sau bằng cách ghép đôi từng phần tử giữa 2 list
+languages = ["Python", "C/C++", "C#", 'Java', "Kotlin"]
+keys = ['Language', 'Programming']
+print([x+y for x in languages for y in keys])  # Trong for còn có for
+
+# Ví dụ: Sinh ra mảng chứa các số chia hết cho 2 từ mảng cho trước
+random = [8, 1, 2, 5, 6, 0, 7, 9]
+new_list = [x for x in random if x % 2 == 0]
+print(new_list)
+
+"""Quay lại chút với lambda function và sort, sorted, filter, map"""
+
+your_list = ["abc", "1234", []]
+your_list.sort(key=len)
+print(your_list)
+
+ran_list = ["abc", "1234", []]
+ran_list.sort(key=len, reverse=True)
+print(ran_list)
+
+"""Với filter()
+    - Nhận tham số là một function và 1 list
+    - Tham số function sẽ được gọi với tất cả các phần tử của list và một list mới được trả ra chứa các phần tử
+    mà tham số function xác định là True
 """
-s = 'Python Core'
-print(s[::2])  # lấy các ký tự ở chỉ số chẵn
-print(s[1::2])  # lấy các ký tự ở chỉ số lẻ
-print(s[2:-1:3])
+my_list = [1, 2, 5, 8, 9, 6, 7, 0]
+# Lấy các phần tử là số chẵn trong list trên
+so_chan_list = list(filter(lambda x: x % 2 == 0, my_list))
+print(so_chan_list)
 
-"""  Kỹ thuật cắt chuỗi - Slicing - Nâng cao - Cắt với bước nhảy âm
-    => Giống cơ chế làm việc của hàm range(i,j,a) với a là số âm
-    - Cú pháp s[i:j: -a] trả lại chuỗi gồm các ký tự có chỉ số cách đều nhau một đoạn a, bắt đầu từ i lùi dần về trước j
+""" Với map()
+    - Nhận tham số là một function và 1 list
+    - Tham số function sẽ được gọi với tất cả các phần tử trong list và một list mới được trả ra chứa các phần tử
+    mà được trả lại từ tham số function
 """
-s = 'Python Core'
-print(s[8:2:-2])
-print(s[::-1])  # cách lấy ra chuỗi đảo của s
-print(s[-2::-3])
-
-
-""" Kiểm tra membership - đã được giới thiệu từ bài trước 
-    - Toán tử in: True - Nếu có trong chuỗi, False - Nếu không có trong chuỗi
-    - Toán tử not in: Ngược lại với in
-"""
-
-_str = 'Membership DC'
-print('m' in _str)
-print('mem' not in _str)
-
-
-""" Change or Delete Chuỗi
-    - Trong Python, chuỗi sau khi được tạo ra thì không thể thay đổi được (Strings are immutable).
-"""
-s = 'python'
-s[1] = 'i'  # Lỗi: TypeError: 'str' object does not support item assignment
-del s[0]  # Lỗi: TypeError: 'str' object doesn't support item deletion
-
-
-""" Mã - Code của ký tự
-    + Trong máy tính, mọi dữ liệu đều được lưu thành số - chính xác là dạng số nhị phân
-    + Mỗi ký tự được lưu thành một số khác nhau, được gọi là mã - code
-    + Danh sách các mã của các ký tự được gọi là bảng mã
-    + Bảng mã đơn giản nhất là bảng mã ASCII gồm 256 ký tự, đánh số từ 0 đến 255,
-    trong đó gồm tất cả các ký tự ta có thẻ nhìn thấy trên bàn phím máy tính
-    + Bảng mã phổ biến nhất hiện nay là Unicode, chứa hầu hết các ngôn ngữ trên thế giới, ký tự toán học, biểu tượng cảm xúc, ...
-"""
-
-""" Bảng mã ASCII
-    + Chữ cái từ A đến Z có mã tương ứng từ 65 đến 90
-    + Chữ cái từ a đến z có mã tương ứng từ 97 đến 122
-    + Chữ số từ 0 đến 9 có mã tương ứng từ 48 đến 57
-    + Dấu cách có mã 32
-"""
-
-"""
-- Lấy mã của ký tự dùng hàm ord(ký_tự_muốn_lấy_mã)
-- Chuyển từ mã ra ký tự dùng hàm chr(mã_muốn_chuyển)
-"""
-print(ord('A'))
-print(ord('Z'))
-print(ord('b'))
-print(ord('z'))
-print(ord('5'))
-
-print(chr(97))
-print(chr(ord('a') - 32))
-
-
-""" So sánh ký tự
-    - Do mỗi ký tự tưng ứng với mã của nó, nên ta có thể so sánh 2 ký tự với nhau.
-    - Kết quả của các phép so sánh chính là kết quả của so sánh 2 mã tương ứng với ký tự.
-    Ví dụ: 'A' < 'X' => True, 'a' < 'A' => False, 'H' == 'H' => True
-"""
-
-""" So sánh hai chuỗi với nhau bằng cách so sánh từng ký tự có trong cùng chỉ số của từng chuỗi, từ trái qua phái:
-    + 1: So sánh 2 ký tự đầu tiên, ký tự của chuỗi nào lớn hơn thì chuỗi lớn hơn, nếu chúng bằng nhau thì qua bước 2
-    + 2. So sánh 2 ký tự ở vị trí tiếp theo, ký tự của chuỗi nào lớn hơn thì chuỗi lớn hơn, nếu không thì chuyển qua ký tự tiếp sau.
-    + 3. Cứ như vậy lần lượt so sánh các ký tự cho đến khi gặp ký tự mà 2 chuỗi khác nhau hoặc một trong hai chuỗi không còn ký tự nào.
-    Khi đó:
-        - Nếu gặp ký tự mà 2 chuỗi khác nhau, thì ký tự của chuỗi nào lớn hơn thì chuỗi lớn hơn
-        - Nếu cả 2 chuỗi đều không còn ký tự nào để so sánh thì 2 chuỗi đó bằng nhau
-        - Nếu một chuỗi không còn ký tự nào để so sánh, chuỗi còn lại vẫn còn, thì chuỗi dài hơn sẽ lớn hơn
-"""
-print('A' < 'X')
-print('z' != 'Z')
-
-s = 'programming'
-print(s == 'program')
-print(s > 'program')
-print(s < 'pro')
-print(s >= "")
-
-
-""" Iterating: Duyệt các ký tự trong chuỗi
-Để làm việc với từng ký tự trong chuỗi, ta có thể dùng vòng lặp for để duyệt theo chỉ số hoặc duyệt trực tiếp từng ký tự
-"""
-# Ví dụ: Đếm xem trong chuỗi vừa nhập từ bàn phím có bao nhiêu ký tự chữ số
-# Cách 1: Dùng chỉ số => Dùng khi cần quan tâm đến chỉ số
-s = input("Chuỗi s: ")
-count = 0
-for i in range(len(s)):
-    if '0' <= s[i] <= '9':
-        count += 1
-
-print(f"Số lượng ký tự số trong '{s}': {count}")
-
-# Cách 2: Duyệt trực tiếp
-s = input("Chuỗi s: ")
-count = 0
-for item in s:
-    if '0' <= item <= '9':
-        count += 1
-
-print(f"Số lượng ký tự số trong '{s}': {count}")
-
-# Ví dụ: In ra các ký tự số trong chuỗi được nhập từ bàn phím
-s = input("Nhập một chuỗi: ")
-# Cách 1
-for i in range(len(s)):
-    if '0' <= s[i] <= '9':
-        print(s[i], end="")
-print()
-# Cách 2:
-for ky_tu in s:
-    if '0' <= ky_tu <= '9':
-        print(ky_tu, end="")
-
-# Ví dụ: Lấy tất cả các vị trí của ký tự 'a' trong chuỗi
-s = input("Nhập một chuỗi: ")
-for i in range(len(s)):
-    if s[i] == 'a':
-        print(i, end=" ")
-
-
-""" Các hàm phổ biến với chuỗi. Để gọi hàm trên chuỗi s ta dùng cú pháp s.tên_hàm(tham_số_nếu_cần)
-    Tên hàm         Ý nghĩa
-    s.upper()	    Chuyển tất các chữ cái trong chuỗi s thành chữ IN HOA
-    s.lower()	    Chuyển tất các chữ cái trong chuỗi s thành chữ in thường
-    s.title()	    Viết hoa các chữ cái ở đầu các từ và viết thường các ký tự khác trong chuỗi s
-    s.strip()	    Xóa bỏ tất khoảng trắng ở đầu và cuối chuỗi s
-    s.lstrip()	    Xóa bỏ tất khoảng trắng ở đầu chuỗi s
-    s.rstrip()	    Xóa bỏ tất khoảng trắng ở cuối chuỗi s
-"""
-
-print(s.upper())
-print(s.lower())
-print(s.title())
-print(s.strip())
-print(s.lstrip())
-print(s.rstrip())
-
-
-""" Tìm kiếm và thay thế trong chuỗi
-    Tên hàm	            Ý nghĩa
-    s.count(sub)	Đếm số lần xuất hiện của chuỗi sub trong chuỗi s (trả ra số nguyên)
-    s.find(sub)	        Trả ra chỉ số (vị trí) đầu tiên bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
-    s.rfind(sub)	    Trả ra chỉ số cuối cùng bắt đầu xuất hiện chuỗi sub bên trong chuỗi s. Nếu không có chuỗi sub trong s, trả ra -1
-    s.startswith(sub)	Trả ra True nếu chuỗi s bắt đầu bằng chuỗi sub
-    s.endswith(sub)	    Trả ra True nếu chuỗi s kết thúc bằng chuỗi sub
-    s.replace(s1, s2)	Trả ra chuỗi mới bằng cách thay thế TẤT CẢ các chuỗi s1 trong s thành s2
-"""
-
-s = " Hello. i am plusPlus!    "
-print(s.count('us'))
-print(s.count('l'))
-
-s = 'python is amazing'
-print(s.find('on'))
-print(s.find('Python'))
-print(s.rfind('n'))
-print(s.startswith("Py"))
-print(s.endswith("ing"))
-print(s.replace('is', 'are'))
-
-
-""" Định dạng dữ liệu bằng f-strings
-Cú pháp f-strings được giới thiệu từ Python 3.6, ngắn gọn hơn mạnh mẽ hơn, cho phép chèn giá trị biến hoặc nhúng cả biểu thức vào trong chuỗi
-"""
-
-import math
-name, age = 'Python', '30'
-a, b = 3, 4.5
-
-print(f"{name} is {age} years old.")
-print(f"PI number: {math.pi:10.4}")  # ko nói gì thì mặc định là 6 chữ số thập phân, nhưng ở đây lấy 4
-print(f"Diện tích hình chữ nhật {a}x{b} = {a*b:.3}")
-
-from datetime import datetime
-today = datetime.today()
-print(f"Today: {today:%B %d, %Y}")
-
+my_list = [1, 2, 5, 8, 9, 6, 7, 0]
+# Tính bình phương các giá trị trong list
+square_list = list(map(lambda x: x * x, my_list))
+print(square_list)

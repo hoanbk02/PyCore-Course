@@ -3,132 +3,180 @@ __author__ = "hoanbk02@gmail.com"
 __copyright__ = "Copyright 2020, Phạm Phú Hoàn"
 
 
-""" class, object là gì?
-    - Python là ngôn ngữ lập trình hướng đối tượng. Không giống như ngôn ngữ lập trình hướng thủ tục, trọng tâm là hàm,
-    lập trình hướng đối tượng nhận mạnh vào đối tượng - object
-    - object đơn giản chỉ là tập các dữ liệu (biến) và các phương thức hoạt động trên dữ liệu đó. class là bản thết kế cho object
-    - Ví dụ, class như bản phác thảo (nguyên mẫu) cho một ngồi nhà, trong đó mô tả về sàn, tường, cửa sổ, ...
-    Dựa vào đó, để đi xây dựng ngôi nhà - đây chính là object
-    Nhiều ngôi nhà có thể được tạo ra từ một bản thiết kế => tạo ra nhiều object từ một class
-    Mỗi object được gọi là instance (thể hiện) cho class, việc tạo ra object này còn được gọi là instantiation - khởi tạo
+""" Inheritance - Kế thừa là gì?
+    - Kế thừa là một tính năng rất mạnh mẽ trong lập trình hướng đối tượng OOP
+    - Đề cập đến việc tạo ra một class mới bằng việc ít hoặc không sửa đổi một class đã có.
+    class mới được gọi là class dẫn xuất (con), class mà nó kế thừa được gọi là class cơ sở (cha)
+    - Cú pháp:
+        class BaseClass:
+            thân_của_BaseClass
+
+        class DerivedClass(BaseClass):
+            thân_của_DerivedClass
+    - class dẫn xuất thừa hưởng toàn bộ từ class cơ sở (=> Khả năng tái sử dụng code), và có thể được thêm các tính năng mới
+"""
+# Ví dụ về kế thừa
+
+class DaGiac:
+    """ class mô tả về đa giác là hình kín, có từ 3 cạnh trở lên,
+        thuộc tính n - lưu số cạnh,
+        thuộc tính sides - lưu độ dài các cạnh
+        phương thức input_sides - yêu cầu người dùng nhập độ dài các cạnh
+        phương thức display - hiển thị độ dài các cạnh
+        phương thức perimeter - tính và hiển thị chu vi
+    """
+    def __init__(self, no_sides):
+        self.n = no_sides
+        self.sides = [0 for i in range(no_sides)]
+
+    def input_sides(self):
+        self.sides = [float(input('Nhập cạnh ' + str(i+1) + ': ')) for i in range(self.n)]
+
+    def display(self):
+        for i in range(self.n):
+            print(f'Side {str(i+1)} is {self.sides[i]}')
+
+    def perimeter(self):
+        print(f'Chu vi là {sum(self.sides)}')
+
+
+import math
+
+
+class TamGiac(DaGiac):
+    """ class mô tả về tam giác, kế thừa từ đa giác
+        có thêm phương thức area để tính diện tích của nó
+    """
+
+    def __init__(self):
+        DaGiac.__init__(self, 3)
+
+    def area(self):
+        a, b, c = self.sides
+        p = (a + b + c)/2
+        area = math.sqrt(p * (p - a) * (p - b) * (p - c))
+        print('Diện tích của Tam giác là: %0.5f' % area)
+
+
+tamgiac = TamGiac()
+tamgiac.input_sides()
+tamgiac.display()
+tamgiac.perimeter()
+tamgiac.area()
+
+# Không định nghĩa phương thức input_sides(), display(), perimeter() cho class TamGiac nhưng vẫn có thể dùng bình thường
+# Khi 1 thuộc tính không có trong class, sẽ tìm kiếm lên class cơ sở, và cứ thế tiếp tục nếu như class cơ sở là dẫn xuất của class khác
+
+
+""" Method Overriding - Ghi đè phương thức
+    - Trong chương trình trên thấy, __init__() được định nghĩa trong cả 2 class.
+    - Điều gì xảy ra, khi method trong class dẫn xuất ghi đề lên class cơ sở
+    => __init__() trong lớp dẫn xuất được ưu tiên hơn trong class cơ sở
+    - Khi ghi đè, thường chúng ta mong muốn mở rộng nó chứ không đơn thuần là thay thế nó.
+    Điều tương tự cũng được thực hiện khi gọi phương thức class cơ sở từ trong class dẫn xuất DaGiac.__init__(self, 3) từ __init__() của TamGiac
+    Một cách tốt hơn làm việc này là dùng super()
+            DaGiac.__init__(self, 3)  <=>  super().__init__(3)
+"""
+""" Python cung cấp isinstance() và issubclass() để kiểm tra tính kế thừa
+    isinstance() - trả lại True nếu object là thể hiện của class hoặc của class dẫn xuất từ nó.
+                   Tất cả các class trong Python đều được kế thừa từ class có tên là object
+    issubclass() - kiểm tra kế thừa của 2 class
 """
 
-""" Khai báo class:
-    - Bắt đầu bằng từ khóa class, sau đó là tên của nó
-    - Đoạn string đầu tiên được gọi là docstring - mô tả về class. Dù nó là ko bắt buộc, nhưng nên viết nó
-    => như Ví dụ 1
-    - Một class sẽ tạo ra một không gian cục bộ mới, nơi mà thuộc tính - attribute của nó được định nghĩa.
-    Thuộc tính có thể là data hay function
-    - Ngoài ra, còn có các thuộc tính đặc biệt được định nghĩa bắt đầu bằng 2 gạch dưới __, ví dụ: __doc__ trả lại docstring của class đó
-    - Ngay khi định nghĩa class, thì một class object mới được tạo ra với cùng tên.
-    Cái này giúp cho phép truy cập các thuộc tính và khởi tạo đối tượng mới cho class đó => Xem ví dụ 2
+print(isinstance(tamgiac, TamGiac))
+print(isinstance(tamgiac, DaGiac))
+print(isinstance(tamgiac, int))
+print(isinstance(tamgiac, object))
+
+print(issubclass(TamGiac, DaGiac))
+print(issubclass(DaGiac, TamGiac))
+print(issubclass(bool, int))
+
+
+""" Đa kế thừa - Multiple Inheritance
+    - Giống như một số ngôn ngữ lập trình khác (như C++, ...), Python cung cấp đa kế thừa
+    - Một class có thể được kế thừa từ nhiều class cơ sở
+    - Tất cả các thứ của các lớp cơ sở đều kế thừa lại cho class dẫn xuất
+    - Cú pháp:
+        class Base1:
+            thân_của_Base1
+
+        class Base2:
+            thân_của_Base2
+
+        class MultiDerived(Base1, Base2):
+            thân_của_MultiDerived
 """
-# Ví dụ 1:
-class MyClass:
-    """ This is a docstring. I have created a new class """
+
+""" Kế thừa đa cấp - Multilevel Inheritance
+    - Có thể dùng kế thừa từ một lớp dẫn xuất => kế thừa đa cấp. Trong Python, độ sâu bao nhiêu cũng được
+    - Trong kế thừa đa cấp, toàn bộ trong class cơ sở và class dẫn xuất được kế thừa lại cho class dẫn xuất mới
+    - Cú pháp:
+        class Base:
+            thân_của_Base
+
+        class Derived1(Base):
+            thân_của_Derived1
+
+        class Derived2(Derived1):
+            thân_của_Derived2
+"""
+
+""" Thứ tự các Resolution
+    - Mọi class trong Python đều kế thừa từ class object - đây là class cơ sở nhất
+    - Về mặt kỹ thuật, tất cả các class (kể cả dựng sẵn hay do người dùng định nghĩa) đều là class dẫn xuất của class object,
+    và tất cả các đối tượng đều là thể hiện của class object => Ví dụ dưới
+    - Trong kích bản đa kế thừa, bất kì thuộc tính nào đầu tiên cũng được tìm kiếm tại class hiện tại, nếu không thấy,
+    sẽ tìm kiếm lên các lớp cha theo độ ưu tiên: chiều sâu - trước rồi từ trái qua phải, đảm bảo ko tìm kiếm cùng 1 class 2 lần
+    Ví dụ: MultiDerived được tìm kiếm theo thứ tự [Base1, Base2, object] - tuyến tính hóa của class MultiDerived,
+    quy tắc ngày được gọi là Method Resolution Order (MRO) - Thứ tự phân giải phương thức
+    - MRO đảm bảo 1 class luôn xuất hiện trước cha của nó. Được hiển thị bằng thuộc tính __mro__ hoặc phương thức mro() => Ví dụ dưới
+"""
+
+print(issubclass(list, object))
+print(isinstance(1992, object))
+print(isinstance("Python", object))
+
+
+class Base1:
     pass
 
 
-# Ví dụ 2:
-class MyClass:
-    """ Đây là docstring của MyClass """
-    attr = 0
-
-    def func(self):
-        print('Hallo!')
+class Base2:
+    pass
 
 
-print(MyClass.__doc__)
-print(MyClass.attr)
-print(MyClass.func)
+class MultiDerived(Base1, Base2):
+    pass
 
 
-""" Tạo object
-    - Mỗi class object dùng để truy cập vào thuộc tính khác nhau
-    - Nó cũng có thể dùng để tạo ra các object mới (thể hiện của class). Cách dùng như một lời gọi hàm => Ví dụ 3: Tạo ra
-    một object có tên là obj. Có thể truy cập đến các thuộc tính của object bằng cách dùng tên của object đó.
-    - Thuộc tính có thể là data hoặc method. Method của một object là các hàm tương ứng của class. Bất kì function object
-    nào là thuộc tính của class đều được xác định là một method cho object của class đó.
-    Điều này có nghĩa là MyClass.func là một function object (attribute của class), obj.func là method object
-"""
-# Ví dụ 3:
-obj = MyClass()
+print(MultiDerived.__mro__)
+print(MultiDerived.mro())
 
-# Ví dụ 4:
-class MyClass:
-    """ Đây là docstring của MyClass """
-    attr = 0
+""" Một ví dụ phức tạp hơn 1 chút cho MRO - hình diễn giải: mro.jpg """
 
-    def func(self):
-        print('Hallo!')
+class X:
+    pass
 
 
-obj = MyClass()
-print(MyClass.func)  # Truy cập vào hàm của class => chính là function object
-print(obj.func)  # Truy cập và hàm của class => chính là method object
-obj.func()  # Gọi hàm func()  # Yêu cầu object thực thi method của nó
+class Y:
+    pass
 
 
-# Để ý, trong class, có tham số self trong định nghĩa function, nhưng khi gọi obj.func() lại ko cần tham số => nó vẫn chạy
-# Điều này là do, bất cứ khi nào một đối tượng gọi method của nó, chính là sẽ được truyền làm tham số đầu tiên
-# Vì vậy, obj.func() được dịch thành MyClass.func(obj)
-# => Túm lại thì, việc gọi phương thức với 1 list n tham số là việc gọi hàm tương ứng với list tham số được tạo ra bằng cách
-# thêm object trước tham số đầu tiên. Vì vậy, đối số đầu tiên của hàm trong class phải là chính đối tượng đó,
-# điều này được gọi là self, có thể dùng từ khác nhưng khuyên chân thành là nên tuân theo quy ước dùng self.
-# Giờ thì đã biết đến: class object, instance object, function object, method object (và sự khác nhau giữa chúng)
+class Z:
+    pass
 
 
-""" Constructor - Hàm Khởi tạo
-    - Các hàm trong class mà được bắt đầu bằng __ được gọi là các hàm đặc biệt và chúng mang nghĩa đặc biệt
-    - Một trong số chúng cần quan tâm đặc biệt là __init__(). Nó sẽ được gọi khi một đối tượng mới được tạo ra
-    => Hàm kiểu này, trong OOP được gọi là Constructor
-    - Thường dùng để khởi tạo sẵn cho các thuộc tính
-"""
+class A(X, Y):
+    pass
 
 
-class Fraction:
-    def __init__(self, tu=0, mau=1):
-        self.tu_so = tu
-        self.mau_so = mau
-
-    def show(self):
-        print(f'Phân số: {self.tu_so}/{self.mau_so}')
+class B(Y, Z):
+    pass
 
 
-ps1 = Fraction(1, 3)
-ps1.show()
-
-ps2 = Fraction(3, 5)
-ps2.attr = 7
-print(ps2.tu_so, ps2.mau_so, ps2.attr)
-
-print(ps1.attr)  # AttributeError: 'Fraction' object has no attribute 'attr'
-
-# Trong đoạn code trên, định nghĩa một class mới Fraction biểu diễn cho phân số, có hai hàm
-# __init__() để khởi tạo các biến tử số và mẫu số, mặc định là 0 và 1
-# và show() để hiển thị phân số đúng cách
-# Một thứ rất thú vị, thuộc tính của một đối tượng có thể được tạo ra khi đang chạy chương trình.
-# Thấy thuộc tính attr của ps2 được tạo ra và được đọc bình thường, còn ps1 thì ko có, cố tính truy cập sẽ báo lỗi
+class M(B, A, Z):
+    pass
 
 
-""" Xóa bỏ thuộc tính và đối tượng
-    - Bất kì thuộc tính nào của đối tượng cũng có thể bị xóa bỏ đi bất cứ lúc nào bằng cách dùng câu lệnh del => Ví dụ 5
-"""
-
-# Ví dụ 5:
-ps3 = Fraction(2, 5)
-del ps3.mau_so
-ps3.show()  # AttributeError: 'Fraction' object has no attribute 'mau_so'
-
-del Fraction.show
-ps3.show()  # AttributeError: 'Fraction' object has no attribute 'show'
-
-ps4 = Fraction(5, 9)
-del ps4
-ps4  # NameError: name 'ps4' is not defined
-
-# Giải thích: xóa bỏ đối tượng, trong thực tế cũng khá phức tạp
-# Khi tạo ra ps4 = Fraction(5, 9) một đối tượng của Fraction được tạo ra trong memory và ps4 được gắn với nó
-# Trong lệnh, del ps4 cái liên kết gắn đó bị xóa và tên ps4 được xóa bỏ khỏi không gian các tên biến.
-# Và đối tượng thì vẫn tồn tại trong memory, khi ko còn tên nào được gắn với nó thì nó sẽ bị hủy tự động
-# Việc hủy tự động các đối tượng không có tham chiếu này trong Python được gọi là bộ sưu tập rác - garbage collection
+print(M.mro())
